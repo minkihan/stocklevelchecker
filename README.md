@@ -1,3 +1,6 @@
-#javlogger
+javlogger
+===
 
-personal javbus incoming log...
+### 개발 목표
+1. javbus를 특정 간격으로 크롤링 해서 날짜별 목록을 만듬.
+2. 
