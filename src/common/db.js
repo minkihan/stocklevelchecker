@@ -1,6 +1,9 @@
 /*
     docker run mongo
     docker run --name mongo -p 27017:27017 -d mongo
+
+    mongo in docker specify store data
+    docker run --name mongo -p 27017:27017 -v /Users/min-kihan/Documents/__db:/data/db -d mongo
 */
 
 const mongoose = require( "mongoose" ) ;
