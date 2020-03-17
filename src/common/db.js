@@ -1,3 +1,8 @@
+/*
+    docker run mongo
+    docker run --name mongo -p 27017:27017 -d mongo
+*/
+
 const mongoose = require( "mongoose" ) ;
 
 // connect to mongodb
