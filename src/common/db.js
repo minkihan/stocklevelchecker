@@ -12,23 +12,12 @@ const mongoose = require( "mongoose" ) ;
 module.exports.getconnection = async() => { 
     log( "### getconnection" ) ;
     const connector = mongoose.connect( 
-        "mongodb://localhost:27017/test", {
+        "mongodb://localhost:27017/stocklevelchecker", {
             useUnifiedTopology: true
             , useNewUrlParser : true
         } ) ;
+    
+    const db = mongoose.connection ;
+    db.once( "open", () => console.log( "### getconnection complete" ) ) ;
+    db.on( "error", ( e ) => console.error( `error on getconnection : ${e}` ) ) ;
 } ;
-
-/*
-const db = mongoose.connection ;
-const handleOpen = () => console.log( "connected to db" ) ;
-const handleError = ( err ) => console.log( "error on db connection : ${err}" ) ;
-db.once( "open", handleOpen ) ;
-db.on( "error", handleError ) ;
-
-; ( async () => {
-    console.log( "started..." ) ;
-    await getconnection() ;
-    //await createjavlogger( "kahoo" ) ;
-    await findjavlogger() ;
-} ) ()
-*/

@@ -1,14 +1,14 @@
 const init = require( "./common/init.js" ) ;
 
-const javlogger = require( "./model/javlogger.js" ) ;
+const patagonia = require( "./model/patagonia.js" ) ;
 const getparsehtml = require( "./service/getparsehtml.js" ) ;
 
 ( async() => {
     await init.start() ;
-    //await javlogger.create( "ayakano5" ) ;
-    await javlogger.find() ;
+    //await patagonia.create( "torrentshell 3l black - SIZE : L" ) ;
+    await patagonia.find() ;
 
-    getparsehtml.getList( 1 ) ;
+    //getparsehtml.getList( 1 ) ;
 } ) () ;
 
 
