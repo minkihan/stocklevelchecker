@@ -5,7 +5,7 @@ const getparsehtml = require( "./service/getparsehtml.js" ) ;
 
 ( async() => {
     await init.start() ;
-    //await patagonia.create( "torrentshell 3l black - SIZE : L" ) ;
+    await patagonia.create( "torrentshell 3l black - SIZE : L" ) ;
     await patagonia.find() ;
 
     //getparsehtml.getList( 1 ) ;
