@@ -1,12 +1,11 @@
 const mongoose = require( "mongoose" ) ;
-const db = require( "../common/db.js" ) ;
 
 const patagonia_schema = mongoose.Schema( {
-    id : String
-    , img_src : String
-    , page : String
-    , detail_desc : String
-    , price : String
+    id          : String,
+    img_src     : String,
+    page        : String,
+    detail_desc : String,
+    price       : String
 } ) ;
 const patagonia_model = mongoose.model( "patagonia", patagonia_schema, "patagonia" ) ;
 

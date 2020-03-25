@@ -30,6 +30,7 @@ module.exports = {
         ],
         "semi-spacing": ["error", { before: true, after: false }],
         "no-console": "off",
-        "no-undef": "off"
+        "no-undef": "off",
+        "no-unused-vars" : "off"
     }
 };

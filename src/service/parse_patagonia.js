@@ -6,13 +6,13 @@ const cheerio = require( "cheerio" ) ;
 const iconv = require( "iconv-lite" ) ;
 
 const patagonia = require( "../model/patagonia.js" ) ;
-const domain = `http://www.patagonia.co.kr/shop/goods/goods_list.php?&category=003016` ;
+const url = `http://www.patagonia.co.kr/shop/goods/goods_list.php?&category=003016` ;
 
 module.exports.getList = async() => {
     const getHtml = async() => {
         return await axios.request( {
             method           : "GET",
-            url              : domain,
+            url              : url,
             responseType     : "arraybuffer",
             responseEncoding : "binary"
         } ) ;
