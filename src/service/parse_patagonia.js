@@ -11,10 +11,10 @@ const domain = `http://www.patagonia.co.kr/shop/goods/goods_list.php?&category=0
 module.exports.getList = async() => {
     const getHtml = async() => {
         return await axios.request( {
-            method: "GET"
-            , url: domain
-            , responseType: "arraybuffer"
-            , responseEncoding: "binary"
+            method           : "GET",
+            url              : domain,
+            responseType     : "arraybuffer",
+            responseEncoding : "binary"
         } ) ;
     } ;
     getHtml().then( html => {
@@ -22,16 +22,16 @@ module.exports.getList = async() => {
         const list = $( "#tpl_01 > ul" ).children( "li" ) ;
         list.each( function( i, v ) {
             patagonia.create( {
-                id : v.attribs.id
-                , img_src : $( v ).find( "img" )[0].attribs.src 
-                , page : $( v ).find( ".pname" )[0].attribs.href
-                , detail_desc : $( v ).find( ".pname" ).text()
-                , price : $( v ).find( ".fontNanum > .fontArial" ).text()
-                , desc : $( v ).find( ".dscrt_box" ).text().trim()
+                id          : v.attribs.id,
+                img_src     : $( v ).find( "img" )[0].attribs.src, 
+                page        : $( v ).find( ".pname" )[0].attribs.href,
+                detail_desc : $( v ).find( ".pname" ).text(),
+                price       : $( v ).find( ".fontNanum > .fontArial" ).text(),
+                desc        : $( v ).find( ".dscrt_box" ).text().trim()
             } ) ;
         } ) ;
         return 0 ;
-    } ).then( url => {
+    } ).then( () => {
         // ...
     } ).catch( e => {
         console.error( e ) ; 

@@ -1,8 +1,8 @@
 {
-  "name": "javlogger",
+  "name": "stocklevelchecker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,6 @@
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
     "iconv": "^2.3.5",
-    "iconv-lite": "^0.5.1",
     "mongoose": "^5.9.1"
   }
 }
