@@ -6,8 +6,6 @@ const patagonia_schema = mongoose.Schema( {
     , img_src : String
     , page : String
     , detail_desc : String
-    , detail_desc2 : String
-    , detail_desc3 : String
     , price : String
 } ) ;
 const patagonia_model = mongoose.model( "patagonia", patagonia_schema, "patagonia" ) ;
@@ -17,6 +15,7 @@ module.exports.create = async function( patagonia ) {
     log( "### create patagonia product model" ) ;
     return new patagonia_model( patagonia ).save() ;
 } ;
+
 // find document
 module.exports.find = async() => {
     log( "### find patagonia product model" ) ;
