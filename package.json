@@ -12,6 +12,9 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
+    "detect-character-encoding": "^0.8.0",
+    "iconv": "^2.3.5",
+    "iconv-lite": "^0.5.1",
     "mongoose": "^5.9.1"
   }
 }

@@ -1,29 +1,12 @@
 const init = require( "./common/init.js" ) ;
 
 const patagonia = require( "./model/patagonia.js" ) ;
-const getparsehtml = require( "./service/getparsehtml.js" ) ;
+const parse_patagonia = require( "./service/parse_patagonia.js" ) ;
 
 ( async() => {
-    await init.start() ;
-    await patagonia.create( "torrentshell 3l black - SIZE : L" ) ;
-    await patagonia.find() ;
+    //await init.start() ;
+    await parse_patagonia.getList() ;
+    //await patagonia.find() ;
 
-    //getparsehtml.getList( 1 ) ;
+    //process.exit() ;
 } ) () ;
-
-
-/*
-const call = async() => {
-    for( let i = 1 ; i < 2 ; i++ ) {
-        getList( i ) ;
-    }
-    await c.log( url ) ;
-}
-
-( async() => {
-    const x = [1,2,3] ;
-    x.map( ( v, i ) => {
-        log( v, i ) ;
-    } ) ;
-} ) () ;
-*/
