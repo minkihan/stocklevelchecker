@@ -7,7 +7,7 @@ const file = fs.createWriteStream( "/Users/min-kihan/Documents/jav.json" ) ;
 const phantom = require( 'phantom' ) ;
 let counter = 1 ;
 
-const trc = "transmission-remote -n xx:xx -a magnet:" ;
+const trc = "transmission-remote -n aya5:ekfqlc99 -a magnet:" ;
 const trc_target = "magnet:" ;
 
 module.exports.getDetail = async( j ) => {
@@ -94,7 +94,6 @@ module.exports.getDetail = async( j ) => {
                     if( v.size > picked_size * 1.2 ) {
                         picked_index = v.index ;
                         picked_size = v.size ;
-                        picked = true ;
                     }
                 } ) ;
                 //console.log( picked_index, picked_size ) ;
