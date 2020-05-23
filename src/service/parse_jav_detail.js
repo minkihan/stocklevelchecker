@@ -7,7 +7,7 @@ const file = fs.createWriteStream( "/Users/min-kihan/Documents/jav.json" ) ;
 const phantom = require( 'phantom' ) ;
 let counter = 1 ;
 
-const trc = "transmission-remote -n aya5:ekfqlc99 -a magnet:" ;
+const trc = "transmission-remote -n xx:xx -a magnet:" ;
 const trc_target = "magnet:" ;
 
 module.exports.getDetail = async( j ) => {
