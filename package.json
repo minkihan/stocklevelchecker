@@ -13,6 +13,8 @@
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
     "iconv": "^2.3.5",
-    "mongoose": "^5.9.1"
+    "iconv-lite": "^0.5.1",
+    "mongoose": "^5.9.1",
+    "phantom": "^6.3.0"
   }
 }

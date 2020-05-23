@@ -19,9 +19,9 @@ module.exports.getList = async() => {
     } ;
     getHtml().then( html => {
         const $ = cheerio.load( iconv.decode( html.data, "euc-kr" ).toString() ) ;
-        const list = $( "#tpl_01 > ul" ).children( "li" ) ;
+        const list = $( "#tpl_01 > ul > li" ) ;
         list.each( function( i, v ) {
-            patagonia.create( {
+            console.log( {
                 id          : v.attribs.id,
                 img_src     : $( v ).find( "img" )[0].attribs.src, 
                 page        : $( v ).find( ".pname" )[0].attribs.href,
@@ -29,6 +29,14 @@ module.exports.getList = async() => {
                 price       : $( v ).find( ".fontNanum > .fontArial" ).text(),
                 desc        : $( v ).find( ".dscrt_box" ).text().trim()
             } ) ;
+            // patagonia.create( {
+            //     id          : v.attribs.id,
+            //     img_src     : $( v ).find( "img" )[0].attribs.src, 
+            //     page        : $( v ).find( ".pname" )[0].attribs.href,
+            //     detail_desc : $( v ).find( ".pname" ).text(),
+            //     price       : $( v ).find( ".fontNanum > .fontArial" ).text(),
+            //     desc        : $( v ).find( ".dscrt_box" ).text().trim()
+            // } ) ;
         } ) ;
         return 0 ;
     } ).then( () => {
