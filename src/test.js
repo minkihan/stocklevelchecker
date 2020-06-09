@@ -23,4 +23,21 @@ const trc_original = "magnet:?xt=urn:btih:30A79F57D0E8BDB1BBFEFA648A571064D5EDC1
 
 console.log( trc_original.replace( trc_target, trc ) ) ;
 
-console.warn( 1234 ) ;
+let x = "033120_993-1PON-1080P" ;
+x = x.replace( "-1080P", "" ) ;
+let xp = /([0-9]*)(-|_)+([0-9]*)(-|_)+([A-Z0-9]*)/ ;
+console.log( xp.exec( x ) ) ;
+
+x = "ABBA-471-A" ;
+xp = /(-|_)A$/ ;
+console.log( ">>>>>>> ", x.replace( xp, "-1" ) ) ;
+
+
+const filter = [
+    "-1080P", "-2160P",
+    "蜂鸟@FN151.COM-"
+] ;
+
+filter.forEach( ( v, i ) => {
+    console.log( x.replace( v, "" ) ) ;
+} ) ;

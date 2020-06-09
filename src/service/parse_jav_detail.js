@@ -4,7 +4,7 @@ const iconv = require( "iconv-lite" ) ;
 const fs = require( "fs" ) ;
 const file = fs.createWriteStream( "/Users/min-kihan/Documents/jav.json" ) ;
 
-const phantom = require( 'phantom' ) ;
+const phantom = require( "phantom" ) ;
 let counter = 1 ;
 
 const trc = "transmission-remote -n aya5:ekfqlc99 -a magnet:" ;
@@ -60,6 +60,7 @@ module.exports.getDetail = async( j ) => {
                     const size = new Number( v.size.substr( 0, v.size.length - 2 ) ) ;
                     const mul = v.size.substr( -2 ) === "GB" ? 1000 : 1 ;
                     ta.push( { "size" : size * mul, "index" : i, "name" : v.name } ) ;
+                    j.magnet[i].sizeh = size * mul ;
                 } ) ;
                 ta.sort( ( a, b ) => {
                     if( a.size > b.size ) {
@@ -97,7 +98,14 @@ module.exports.getDetail = async( j ) => {
                     }
                 } ) ;
                 //console.log( picked_index, picked_size ) ;
-                console.debug( j.magnet[picked_index].link.replace( trc_target, trc ) ) ;
+                //console.debug( j.magnet[picked_index].link.replace( trc_target, trc ) ) ;
+
+                console.debug( "===" ) ;
+                j.magnet.forEach( ( v, i ) => {
+                    let sizeh = j.magnet[i].sizeh < 10000 ? " " + j.magnet[i].sizeh : j.magnet[i].sizeh ;
+                    console.debug( i == picked_index ? "* " : "  ", sizeh, j.magnet[i].link.replace( trc_target, trc ) ) ;    
+                } ) ;
+                
                 // 우선순위 end
             
                 await instance.exit() ;
@@ -109,6 +117,6 @@ module.exports.getDetail = async( j ) => {
                 await ph( j ) ;
             } ) ( j ) ;
     } ).catch( e => {
-        console.error( e ) ; 
+        //console.error( e ) ; 
     } ) ;
 }
