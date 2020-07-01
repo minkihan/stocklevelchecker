@@ -14,8 +14,7 @@ const list = [
 ( async() => {
     //await init.start() ;
     //await parse_patagonia.getList() ;
-
-    const a = await parse_jav.getList() ;
+    const a = await parse_jav.getList( process.argv[2] ) ;
     // list.forEach( ( i, v ) => {
     //     setTimeout( () => {
     //         console.log( new Date(), v ) ;

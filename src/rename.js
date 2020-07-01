@@ -4,8 +4,11 @@ const path = require( "path" ) ;
 const fs = require( "fs" ) ;
 
 const filter = [
-    "-1080P", "-2160P", "-720P", "-FHD", "-HD", "_FULL", "_HD",
-    "蜂鸟@FN151.COM-", "HJD2048.COM_", "FUN2048.COM@", "-NYAP2P.COM"
+    "-1080P", "-2160P", "-720P",
+    "-FHD", "FHD", "HD-", "-HD", "_FULL", "_HD", "(1080P)",
+    "蜂鸟@FN151.COM-", "HJD2048.COM_", "FUN2048.COM@", "@18P2P",
+    "-NYAP2P.COM", "~NYAP2P.COM", "BIG2048.COM@",
+    "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
 ] ;
 
 const filter2 = [
@@ -20,7 +23,10 @@ const filter2 = [
     { "match" : /393OTIM/, "replace" : "OTIM" },
     { "match" : /424PSST/, "replace" : "PSST" },
     { "match" : /390JAC/, "replace" : "JAC" },
-    { "match" : "_", "replace" : "-" }
+    { "match" : /107SHYN/, "replace" : "SHYN" },
+    { "match" : "_", "replace" : "-" },
+    //{ "match" : /([A-Z]*)(00)([0-9]*)/, "replace" : "(0)-(2)" },
+    { "match" : /\s*/g, "replace" : "" } 
 ]
 
 //joining path of directory 
@@ -34,7 +40,14 @@ fs.readdir( xxpath, function ( err, files ) {
     //listing all files using forEach
     files.forEach( function ( file ) {
         // Do whatever you want to do with the file
-        const pt = file.split( ".mp4" ) ;
+        let ext = "" ;
+        if( file.split( ".mp4" ).length > 1 ) {
+            ext = ".mp4" ;
+        } else if( file.split( ".mkv" ).length > 1 ) {
+            ext = ".mkv" ;
+        }
+        
+        const pt = file.split( ext ) ;
         let st = pt[0].toUpperCase() ;
         
         // 파일명 정리
@@ -45,10 +58,14 @@ fs.readdir( xxpath, function ( err, files ) {
             st = st.replace( v.match, v.replace ) ;
         } ) ;
 
-        //console.log( xxpath + file, " >>> ", xxpath + st + ".mp4" ) ; 
-
-        fs.rename( xxpath + file, xxpath + st + ".mp4", () => {
-            console.log( xxpath + file, " >>> ", xxpath + st + ".mp4" ) ; 
-        } ) ;
+        const isTest = true ;
+        if( ! isTest ) {
+            fs.rename( xxpath + file, xxpath + st + ".mp4", () => {
+                //console.log( xxpath + file, " >>> ", xxpath + st + ".mp4" ) ;
+                console.log( file, " >>> ", st + ext ) ;
+            } ) ;
+        } else {
+            console.log( file, " >>> ", st + ext ) ;
+        }
     } ) ;
 } ) ;

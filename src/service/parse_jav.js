@@ -1,17 +1,16 @@
 // 수집할 페이지 ... 이걸 어케 하지 .. ?
-const page = 1 ;
-
 const axios = require( "axios" ) ;
 const cheerio = require( "cheerio" ) ;
 const iconv = require( "iconv-lite" ) ;
 
 const jav = require( "../model/jav.js" ) ;
 const jav_detail= require( "./parse_jav_detail.js" ) ;
-const url = `https://www.javbus.com/ko/page/${page}` ;
-//const url = `https://www.javbus.com/ko/uncensored/page/${page}`
 const a = [] ;
 
-module.exports.getList = async() => {
+module.exports.getList = async( page ) => {
+    console.log( "page >>", page ) ;
+    const url = `https://www.javbus.com/ko/page/${page}` ;
+    //const url = `https://www.javbus.com/ko/uncensored/page/${page}`
     const getHtml = async() => {
         return await axios.request( {
             method           : "GET",
@@ -33,7 +32,7 @@ module.exports.getList = async() => {
                     magnet : []
                 } ;
                 jav_detail.getDetail( j ) ;
-            }, i * 1000 * 20 ) ;
+            }, i * 1000 * 10 ) ;
         } ) ;
 
         // async.forEachOf( list, ( value, key, callback ) => {

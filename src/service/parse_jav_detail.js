@@ -97,14 +97,29 @@ module.exports.getDetail = async( j ) => {
                         picked_size = v.size ;
                     }
                 } ) ;
-                //console.log( picked_index, picked_size ) ;
-                //console.debug( j.magnet[picked_index].link.replace( trc_target, trc ) ) ;
 
+                // 픽된 항목 크기의 80% 이내에서 이름이 전부 소문자면서 픽된 항목이 대문자일 때.. --;;;
+                ta.forEach( ( v, i ) => {
+                    //console.log( v.size, picked_size * 0.8, v.name.toUpperCase() != v.name, v.name.toUpperCase(), v.name ) ;
+                    if( v.size >= picked_size * 0.8 ) {
+                        if( v.name.toUpperCase() != v.name ) {
+                            if( v.name.toUpperCase() == j.magnet[picked_index].name ) {
+                                picked_index = v.index ;
+                                picked_size = v.size ;
+                            }
+                        }
+                    }
+                } ) ;
+                //console.log( picked_index, picked_size ) ;
+                console.debug( j.magnet[picked_index].link.replace( trc_target, trc ) ) ;
+
+                /*
                 console.debug( "===" ) ;
                 j.magnet.forEach( ( v, i ) => {
                     let sizeh = j.magnet[i].sizeh < 10000 ? " " + j.magnet[i].sizeh : j.magnet[i].sizeh ;
                     console.debug( i == picked_index ? "* " : "  ", sizeh, j.magnet[i].link.replace( trc_target, trc ) ) ;    
                 } ) ;
+                */
                 
                 // 우선순위 end
             
