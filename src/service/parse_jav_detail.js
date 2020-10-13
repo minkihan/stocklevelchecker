@@ -23,6 +23,7 @@ module.exports.getDetail = async( j ) => {
         const $ = cheerio.load( html.data ) ;
         j.img = $( ".bigImage" ).prop( "href" ) ;
         j.maker = $( $( ".col-md-3.info > p > a" )[1] ).text() ;
+
         return j ;
     } ).then( ( j ) => {
             const ph = async( j ) => {
@@ -40,17 +41,24 @@ module.exports.getDetail = async( j ) => {
                 
                 // magnet 영역
                 const $ = cheerio.load( content ) ;
-                const tr_list = $( $( "#magnet-table > tbody" )[1] ).find( "tr" ) ;
+                //const tr_list = $( $( "#magnet-table > tbody" )[1] ).find( "tr" ) ;
+                const tr_list = $( "#magnet-table tr" ) ;
                 tr_list.each( function( i, v ) {
                     const td_list = $( v ).find( "td" ) ;
                     let magnet = {} ;
+                    let c = 1 ;
                     td_list.each( function( ii, vv ) { 
-                        if( ii == 0 ) magnet.name = $( vv ).find( "a" ).text().trim() ;
-                        if( ii == 0 ) magnet.link = $( vv ).find( "a" )[0].attribs.href ;
-                        if( ii == 1 ) magnet.size = $( vv ).find( "a" ).text().trim() ;
-                        if( ii == 2 ) magnet.date = $( vv ).find( "a" ).text().trim() ;
+                        //console.log( "#####", c++, $( vv ).find( "a" ).text().trim(), $( vv ).find( "a" ).text().trim() == "" );
+
+                        // 가끔 내용 없이 광고가 있는 행이 있음 걸러버려~
+                        if( $( vv ).find( "a" ).text().trim() != "" ) {
+                            if( ii == 0 ) magnet.name = $( vv ).find( "a" ).text().trim() ;
+                            if( ii == 0 ) magnet.link = $( vv ).find( "a" )[0].attribs.href ;
+                            if( ii == 1 ) magnet.size = $( vv ).find( "a" ).text().trim() ;
+                            if( ii == 2 ) magnet.date = $( vv ).find( "a" ).text().trim() ;
+                            j.magnet.push( magnet ) ;
+                        }
                     } ) ;
-                    j.magnet.push( magnet ) ;
                 } ) ;
                 // magnet 영역 end
 
@@ -110,8 +118,18 @@ module.exports.getDetail = async( j ) => {
                         }
                     }
                 } ) ;
-                //console.log( picked_index, picked_size ) ;
-                console.debug( j.magnet[picked_index].link.replace( trc_target, trc ) ) ;
+                //console.log( j.magnet, ">>>" ) ;
+                //if( j.magnet[picked_index].link != undefined ) {
+                    try {
+                        console.log( j.magnet[picked_index].link.replace( trc_target, trc ) ) ;
+                    } catch( e ) {
+                        //console.log( "### ERROR ON", j.href ) ;
+                    }
+                // } else {
+                //    console.log( "#########" ) ;
+                //   console.log( j.magnet[picked_index] ) ;
+                //}
+                
 
                 /*
                 console.debug( "===" ) ;

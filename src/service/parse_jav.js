@@ -8,9 +8,11 @@ const jav_detail= require( "./parse_jav_detail.js" ) ;
 const a = [] ;
 
 module.exports.getList = async( page ) => {
-    console.log( "page >>", page ) ;
+    console.log( "page", page ) ;
     const url = `https://www.javbus.com/ko/page/${page}` ;
+    //const url = `https://www.javbus.com/ko/star/s3q/${page}` ;
     //const url = `https://www.javbus.com/ko/uncensored/page/${page}`
+    //const url = `https://www.javbus.com/ko/uncensored/search/hamesamurai/${page}` ;
     const getHtml = async() => {
         return await axios.request( {
             method           : "GET",
@@ -31,6 +33,8 @@ module.exports.getList = async( page ) => {
                     title  : $( v ).find( "img" )[0].attribs.title,
                     magnet : []
                 } ;
+                //console.log( "" ) ;
+                //console.log( "#", j.title ) ;
                 jav_detail.getDetail( j ) ;
             }, i * 1000 * 10 ) ;
         } ) ;

@@ -8,7 +8,7 @@ const filter = [
     "-FHD", "FHD", "HD-", "-HD", "_FULL", "_HD", "(1080P)",
     "蜂鸟@FN151.COM-", "HJD2048.COM_", "FUN2048.COM@", "@18P2P",
     "-NYAP2P.COM", "~NYAP2P.COM", "BIG2048.COM@",
-    "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
+    "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -", ".HD1080P-WWW.52IV.NET"
 ] ;
 
 const filter2 = [
@@ -58,7 +58,7 @@ fs.readdir( xxpath, function ( err, files ) {
             st = st.replace( v.match, v.replace ) ;
         } ) ;
 
-        const isTest = true ;
+        const isTest = false ;
         if( ! isTest ) {
             fs.rename( xxpath + file, xxpath + st + ".mp4", () => {
                 //console.log( xxpath + file, " >>> ", xxpath + st + ".mp4" ) ;
