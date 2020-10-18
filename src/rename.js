@@ -7,8 +7,9 @@ const filter = [
     "-1080P", "-2160P", "-720P",
     "-FHD", "FHD", "HD-", "-HD", "_FULL", "_HD", "(1080P)",
     "蜂鸟@FN151.COM-", "HJD2048.COM_", "FUN2048.COM@", "@18P2P",
-    "-NYAP2P.COM", "~NYAP2P.COM", "BIG2048.COM@",
-    "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -", ".HD1080P-WWW.52IV.NET"
+    "-NYAP2P.COM", "~NYAP2P.COM", "BIG2048.COM@", "ONE2048.COM-", "ONE2048.COM_", "@蜂鳥@FENGNIAO131.VIP-",
+    "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -", ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET",
+    "-IDOL", "-IDOLRED", "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT"
 ] ;
 
 const filter2 = [
@@ -19,11 +20,26 @@ const filter2 = [
     { "match" : /(-|_)E$/, "replace" : "-5" },
     { "match" : /(-|_)F$/, "replace" : "-6" },
     { "match" : /360AEG/, "replace" : "AEG" },
+    { "match" : /360MBM/, "replace" : "MBM" },
+    { "match" : /21MIHA/, "replace" : "MIHA" },
     { "match" : /107EMOI/, "replace" : "EMOI" },
+    { "match" : /107OKYH/, "replace" : "OKYH" },
+    { "match" : /107STKO/, "replace" : "STKO" },
+    { "match" : /1SVDVD/, "replace" : "SVDVD" },
+    { "match" : /217MIHA/, "replace" : "MIHA" },
+    { "match" : /1SVRE/, "replace" : "SVRE" },
     { "match" : /393OTIM/, "replace" : "OTIM" },
+    { "match" : /320MMGH/, "replace" : "MMGH" },
+    { "match" : /H-086JRZD/, "replace" : "JRZD" },
+    { "match" : /H-1154IMPNO/, "replace" : "IMPNO" },
     { "match" : /424PSST/, "replace" : "PSST" },
     { "match" : /390JAC/, "replace" : "JAC" },
     { "match" : /107SHYN/, "replace" : "SHYN" },
+    { "match" : /406FTBL/, "replace" : "FTBL" },
+    { "match" : /406FTHT/, "replace" : "FTHT" },
+    { "match" : /425IKST/, "replace" : "IKST" },
+    { "match" : /118SOUD/, "replace" : "SOUD" },
+    { "match" : /110AKD/, "replace" : "AKD" },
     { "match" : "_", "replace" : "-" },
     //{ "match" : /([A-Z]*)(00)([0-9]*)/, "replace" : "(0)-(2)" },
     { "match" : /\s*/g, "replace" : "" } 
@@ -58,7 +74,7 @@ fs.readdir( xxpath, function ( err, files ) {
             st = st.replace( v.match, v.replace ) ;
         } ) ;
 
-        const isTest = false ;
+        const isTest = true ;
         if( ! isTest ) {
             fs.rename( xxpath + file, xxpath + st + ".mp4", () => {
                 //console.log( xxpath + file, " >>> ", xxpath + st + ".mp4" ) ;

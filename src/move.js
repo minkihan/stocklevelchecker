@@ -52,11 +52,26 @@ fs.readdir( xxpath, function ( err, files ) {
             ta.forEach( ( v, i ) => {
                 if( pickSize * 0.8 <= ta[i].size ) {
                     if( ! isTest ) {
+                        // real
                         fs.rename( ta[i].path, tgpath + ta[i].name, () => {
                             console.log( ta[i].name, ta[i].size, ta[i].path ) ;
                         } ) ;
                     } else {
-                        console.log( ta[i].name, ta[i].size, ta[i].path ) ;
+                        // for test
+                        const name =  new String( ta[i].name ) ;
+                        let passflag = true ;
+                        const pass = [ "720p", "720P", ".SD." ] ;
+
+                        // 수동으로 이동할때 .. ㅠㅠ
+                        // const pass = [ "720p", "720P", ".SD.", "fun2048", "hjd2048", "big2048", "nyap2p", "one2048", "heyzo", "carib", "1pon" ] ;
+                        pass.forEach( ( v, i ) => {
+                            if( name.includes( v ) ) {
+                                passflag = false ;
+                            }
+                        } ) ;
+                        if( passflag ) {
+                            console.log( ta[i].name, ta[i].size, ta[i].path ) ;
+                        }
                     }
                 }
             } ) ;
