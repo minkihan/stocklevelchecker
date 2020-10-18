@@ -2,13 +2,15 @@ const axios = require( "axios" ) ;
 const cheerio = require( "cheerio" ) ;
 const iconv = require( "iconv-lite" ) ;
 const fs = require( "fs" ) ;
-const file = fs.createWriteStream( "/Users/min-kihan/Documents/jav.json" ) ;
+//const file = fs.createWriteStream( "/Users/min-kihan/Documents/jav.json" ) ;
 
 const phantom = require( "phantom" ) ;
 let counter = 1 ;
 
 const trc = "transmission-remote -n aya5:ekfqlc99 -a magnet:" ;
 const trc_target = "magnet:" ;
+
+const exec = require( "child_process" ).exec ;
 
 module.exports.getDetail = async( j ) => {
     const getHtml = async( j ) => {
@@ -121,7 +123,9 @@ module.exports.getDetail = async( j ) => {
                 //console.log( j.magnet, ">>>" ) ;
                 //if( j.magnet[picked_index].link != undefined ) {
                     try {
-                        console.log( j.magnet[picked_index].link.replace( trc_target, trc ) ) ;
+                        const xxlink = j.magnet[picked_index].link.replace( trc_target, trc ) ;
+                        console.log( xxlink ) ;
+                        exec( xxlink );
                     } catch( e ) {
                         //console.log( "### ERROR ON", j.href ) ;
                     }

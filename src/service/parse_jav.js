@@ -20,6 +20,7 @@ module.exports.getList = async( page ) => {
         } ) ;
     } ;
     getHtml().then( html => {
+        //console.log( html ) ;
         const $ = cheerio.load( html.data ) ;
         const list = $( "#waterfall > .item > .movie-box" ) ;
 
