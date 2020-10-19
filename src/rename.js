@@ -1,7 +1,10 @@
-const xxpath = "/Users/min-kihan/Google Drive File Stream/내 드라이브/APP/__inbox_xx/" ;
-
 const path = require( "path" ) ;
 const fs = require( "fs" ) ;
+//const move = require( "./move.js" ) ;
+
+const path_2_download_done = "/home/minkihan/__TRANSMISSION/2_download_done/" ;
+const path_3_renamed = "/home/minkihan/__TRANSMISSION/3_renamed/" ;
+const isTest = process.argv.slice( 2 )[0] === "test" ? true : false ;
 
 const filter = [
     "-1080P", "-2160P", "-720P",
@@ -46,42 +49,50 @@ const filter2 = [
 ]
 
 //joining path of directory 
-//const directoryPath = path.join( __dirname, xxpath ) ;
+//const directoryPath = path.join( __dirname, path_2_download_done ) ;
 //passsing directoryPath and callback function
-fs.readdir( xxpath, function ( err, files ) {
+fs.readdir( path_2_download_done, function ( err, files ) {
     //handling error
     if ( err ) {
         return console.log( "Unable to scan directory: " + err ) ;
     } 
     //listing all files using forEach
     files.forEach( function ( file ) {
-        // Do whatever you want to do with the file
-        let ext = "" ;
-        if( file.split( ".mp4" ).length > 1 ) {
-            ext = ".mp4" ;
-        } else if( file.split( ".mkv" ).length > 1 ) {
-            ext = ".mkv" ;
+        let isDirectory = false ;
+        if( fs.lstatSync( path_2_download_done + file ).isDirectory() ) {
+            isDirectory = true ;
         }
-        
-        const pt = file.split( ext ) ;
-        let st = pt[0].toUpperCase() ;
-        
-        // 파일명 정리
-        filter.forEach( ( v, i ) => {
-            st = st.replace( v, "" ) ;
-        } ) ;
-        filter2.forEach( ( v, i ) => {
-            st = st.replace( v.match, v.replace ) ;
-        } ) ;
 
-        const isTest = true ;
-        if( ! isTest ) {
-            fs.rename( xxpath + file, xxpath + st + ".mp4", () => {
-                //console.log( xxpath + file, " >>> ", xxpath + st + ".mp4" ) ;
-                console.log( file, " >>> ", st + ext ) ;
-            } ) ;
+        if( isDirectory ) { 
+            //move.start( isTest ) ;
         } else {
-            console.log( file, " >>> ", st + ext ) ;
+            // Do whatever you want to do with the file
+            let ext = "" ;
+            if( file.split( ".mp4" ).length > 1 ) {
+                ext = ".mp4" ;
+            } else if( file.split( ".mkv" ).length > 1 ) {
+                ext = ".mkv" ;
+            }
+            
+            const pt = file.split( ext ) ;
+            let st = pt[0].toUpperCase() ;
+            
+            // 파일명 정리
+            filter.forEach( ( v, i ) => {
+                st = st.replace( v, "" ) ;
+            } ) ;
+            filter2.forEach( ( v, i ) => {
+                st = st.replace( v.match, v.replace ) ;
+            } ) ;
+
+            if( ! isTest ) {
+                fs.rename( path_2_download_done + file, path_3_renamed + st + ".mp4", () => {
+                    //console.log( path_2_download_done + file, " >>> ", path_2_download_done + st + ".mp4" ) ;
+                    console.log( file, " >>> ", st + ext ) ;
+                } ) ;
+            } else {
+                console.log( file, " >>> ", st + ext ) ;
+            }
         }
     } ) ;
 } ) ;
