@@ -53,10 +53,11 @@ const isTest = process.argv.slice( 2 )[0] === "test" ? true : false ;
                 const pickSize = ta[0].size ;
                 ta.forEach( ( v, i ) => {
                     if( pickSize * 0.8 <= ta[i].size ) {
+                        //console.log( isTest ) ;
                         if( ! isTest ) {
                             // real
                             fs.rename( ta[i].path, tgpath + ta[i].name, () => {
-                                console.log( ta[i].name, ta[i].size, ta[i].path ) ;
+                                console.log( ta[i].name, ta[i].size ) ;
                             } ) ;
                         } else {
                             // for test
@@ -72,7 +73,7 @@ const isTest = process.argv.slice( 2 )[0] === "test" ? true : false ;
                                 }
                             } ) ;
                             if( passflag ) {
-                                console.log( ta[i].name, ta[i].size, ta[i].path ) ;
+                                console.log( ta[i].name, ta[i].size, ta[i].path, tgpath + ta[i].name ) ;
                             }
                         }
                     }

@@ -12,7 +12,7 @@ const filter = [
     "蜂鸟@FN151.COM-", "HJD2048.COM_", "FUN2048.COM@", "@18P2P",
     "-NYAP2P.COM", "~NYAP2P.COM", "BIG2048.COM@", "ONE2048.COM-", "ONE2048.COM_", "@蜂鳥@FENGNIAO131.VIP-",
     "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -", ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET",
-    "-IDOL", "-IDOLRED", "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT"
+    "-IDOLRED", "-IDOL", "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT"
 ] ;
 
 const filter2 = [
@@ -44,6 +44,7 @@ const filter2 = [
     { "match" : /118SOUD/, "replace" : "SOUD" },
     { "match" : /110AKD/, "replace" : "AKD" },
     { "match" : "_", "replace" : "-" },
+    { "match" : "000", "replace" : "-0" },
     //{ "match" : /([A-Z]*)(00)([0-9]*)/, "replace" : "(0)-(2)" },
     { "match" : /\s*/g, "replace" : "" } 
 ]
