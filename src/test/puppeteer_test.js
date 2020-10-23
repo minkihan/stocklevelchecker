@@ -1,3 +1,8 @@
+/**
+ * puppeteer.js 테스트.. 
+ * internal-chromium 사용하여 웹 페이지 로딩함 느림
+ */
+
 const puppeteer = require( "puppeteer" ) ;
 const cheerio = require( "cheerio" ) ;
 
@@ -27,7 +32,6 @@ getPage().then( $ => {
                 if( ii == 0 ) magnet.link = $( vv ).find( "a" )[0].attribs.href ;
                 if( ii == 1 ) magnet.size = $( vv ).find( "a" ).text().trim() ;
                 if( ii == 2 ) magnet.date = $( vv ).find( "a" ).text().trim() ;
-                //j.magnet.push( magnet ) ;
             }
         } ) ;
         console.log( magnet ) ;

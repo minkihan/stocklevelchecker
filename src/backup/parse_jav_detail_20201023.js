@@ -1,11 +1,16 @@
 const axios = require( "axios" ) ;
 const puppeteer = require( "puppeteer" ) ;
 const cheerio = require( "cheerio" ) ;
+const iconv = require( "iconv-lite" ) ;
 const fs = require( "fs" ) ;
-const exec = require( "child_process" ).exec ;
+//const file = fs.createWriteStream( "/Users/min-kihan/Documents/jav.json" ) ;
+//const phantom = require( "phantom" ) ;
+let counter = 1 ;
 
 const trc = "transmission-remote -n aya5:ekfqlc99 -a magnet:" ;
 const trc_target = "magnet:" ;
+
+const exec = require( "child_process" ).exec ;
 
 module.exports.getDetail = async( j ) => {
     const getHtml = async( j ) => {
@@ -31,6 +36,7 @@ module.exports.getDetail = async( j ) => {
                 let magnet = {} ;
                 let c = 1 ;
                 td_list.each( function( ii, vv ) {
+                    //console.log( "#####", c++, $( vv ).find( "a" ).text().trim(), $( vv ).find( "a" ).text().trim() == "" );
                     // 가끔 내용 없이 광고가 있는 행이 있음 걸러버려~
                     if( $( vv ).find( "a" ).text().trim() != "" ) {
                         if( ii == 0 ) magnet.name = $( vv ).find( "a" ).text().trim() ;
@@ -104,8 +110,8 @@ module.exports.getDetail = async( j ) => {
                     }
                 }
             } ) ;
-
-            // magnet 링크 출력 및 transmission으로 전송
+            //console.log( j.magnet, ">>>" ) ;
+            //if( j.magnet[picked_index].link != undefined ) {
             try {
                 const xxlink = j.magnet[picked_index].link.replace( trc_target, trc ) ;
                 console.log( xxlink ) ;
