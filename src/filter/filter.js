@@ -4,7 +4,7 @@ exports.filter = () => {
         "-1080P", "-2160P", "-720P", "_2K", "-2K",
         "-FHD", "FHD", "HD-", "HD_", "-HD", "_HD", "_FULL", "(1080P)",
         "蜂鸟@FN151.COM-", "@蜂鳥@FENGNIAO131.VIP-",
-        "HJD2048.COM_", "FUN2048.COM@", "BIG2048.COM@", "ONE2048.COM-", "ONE2048.COM_",
+        "HJD2048.COM_", "FUN2048.COM@", "BIG2048.COM@", "ONE2048.COM-", "ONE2048.COM_", "BIG2048COM@",
         "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
         "-NYAP2P.COM", "~NYAP2P.COM", 
         ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET",
