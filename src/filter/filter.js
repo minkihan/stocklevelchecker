@@ -3,12 +3,13 @@ exports.filter = () => {
         ".",
         "-1080P", "-2160P", "-720P", "_2K", "-2K",
         "-FHD", "FHD", "HD-", "HD_", "-HD", "_HD", "_FULL", "(1080P)",
-        "蜂鸟@FN151.COM-", "@蜂鳥@FENGNIAO131.VIP-",
-        "HJD2048.COM_", "FUN2048.COM@", "BIG2048.COM@", "ONE2048.COM-", "ONE2048.COM_", "BIG2048COM@",
+        "蜂鸟@FN151.COM-", "@蜂鳥@FENGNIAO131.VIP-", "@蜂鳥@FENGNIAO131VIP-",
+        "HJD2048.COM_", "FUN2048.COM@", "BIG2048.COM@", 
+        "ONE2048.COM-", "ONE2048.COM_", "BIG2048COM@",
         "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
         "-NYAP2P.COM", "~NYAP2P.COM", 
         ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET",
-        "-IDOLRED", "-IDOL", 
+        "-IDOLRED", "-IDOL", " _ JAV",
         "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT", "@18P2P"
     ] ;
 }
@@ -42,6 +43,8 @@ exports.filter2 = () => {
         { "match" : /425IKST/, "replace" : "IKST" },
         { "match" : /118SOUD/, "replace" : "SOUD" },
         { "match" : /110AKD/, "replace" : "AKD" },
+        { "match" : /118SIM/, "replace" : "SIM" },
+        { "match" : /118KFNE/, "replace" : "KFNE" },
         { "match" : "_", "replace" : "-" },
         { "match" : "000", "replace" : "-0" },
         //{ "match" : /([A-Z]*)(00)([0-9]*)/, "replace" : "(0)-(2)" },
