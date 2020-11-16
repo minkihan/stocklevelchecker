@@ -4,8 +4,8 @@ const mongoose = require( "mongoose" ) ;
 module.exports.getconnection = async() => { 
     log( "### getconnection" ) ;
     const connector = mongoose.connect( 
-        "mongodb://localhost:27017/stocklevelchecker", {
-        //"mongodb+srv://aya5:wsmAOXLuzJd9Lgxo@cluster0-mpntl.gcp.mongodb.net/test?retryWrites=true&w=majority", {
+        "mongodb://221.155.244.246:27017/jav", {
+        //"mongodb+srv://aya5:wsmAOXLuzJd9Lgxo@minkihan.mpntl.mongodb.net/jav?retryWrites=true&w=majority", {
             useUnifiedTopology : true,
             useNewUrlParser    : true
         } ) ;

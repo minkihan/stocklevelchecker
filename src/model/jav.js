@@ -4,7 +4,7 @@ const jav_schema = mongoose.Schema( {
     id          : String,
     img_src     : String
 } ) ;
-const jav_model = mongoose.model( "jav", jav_schema, "jav" ) ;
+const jav_model = mongoose.model( "test", jav_schema, "test" ) ;
 
 // create document
 module.exports.create = async function( jav ) {
