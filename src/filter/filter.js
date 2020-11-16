@@ -7,7 +7,7 @@ exports.filter = () => {
         "HJD2048.COM_", "FUN2048.COM@", "BIG2048.COM@", 
         "ONE2048.COM-", "ONE2048.COM_", "BIG2048COM@",
         "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
-        "-NYAP2P.COM", "~NYAP2P.COM", 
+        "-NYAP2P.COM", "~NYAP2P.COM", "~NYAP2PCOM",
         ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET",
         "-IDOLRED", "-IDOL", " _ JAV",
         "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT", "@18P2P"

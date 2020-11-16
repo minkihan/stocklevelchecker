@@ -9,13 +9,22 @@ const trc_target = "magnet:" ;
 
 module.exports.getDetail = async( j ) => {
     const getHtml = async( j ) => {
+        // const chromeFlags = [ 
+        //     '--disable-setuid-sandbox',
+        //     '--headless',
+        //     '--no-sandbox',
+        //     "--disable-gpu",
+        //     "--single-process",
+        //     "--no-zygote"
+        // ]
+        //const browser = await puppeteer.launch( { args : chromeFlags } ) ;
         const browser = await puppeteer.launch() ;
         const page = await browser.newPage() ;
         await page.goto( j.href ) ;
         const pageModel = await page.$( "html" ) ;
         const content = await pageModel.evaluate( body => body.innerHTML ) ;
-        const $ = await cheerio.load( content ) ;
         browser.close() ;
+        const $ = await cheerio.load( content ) ;
         return $ ;
     } ;
     getHtml( j ).then( $ => {
