@@ -1,4 +1,4 @@
-//const axios = require( "axios" ) ;
+const axios = require( "axios" ) ;
 const puppeteer = require( "puppeteer" ) ;
 const cheerio = require( "cheerio" ) ;
 const fs = require( "fs" ) ;
@@ -18,12 +18,19 @@ module.exports.getDetail = async( j ) => {
         //     "--no-zygote"
         // ]
         //const browser = await puppeteer.launch( { args : chromeFlags } ) ;
-        const browser = await puppeteer.launch() ;
-        const page = await browser.newPage() ;
-        await page.goto( j.href ) ;
-        const pageModel = await page.$( "html" ) ;
-        const content = await pageModel.evaluate( body => body.innerHTML ) ;
-        browser.close() ;
+        //console.log( j.href ) ;
+        let content = null ;
+        try {
+            const browser = await puppeteer.launch() ;
+            const page = await browser.newPage() ;
+            await page.setDefaultNavigationTimeout( 0 ) ;
+            await page.goto( j.href ) ;
+            const pageModel = await page.$( "html" ) ;
+            content = await pageModel.evaluate( body => body.innerHTML ) ;
+            browser.close() ;
+        } catch( e ) {
+            console.error( e ) ;
+        }
         const $ = await cheerio.load( content ) ;
         return $ ;
     } ;
