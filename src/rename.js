@@ -42,6 +42,9 @@ fs.readdir( path_2_download_done, function ( err, files ) {
             filter.filter2().forEach( ( v, i ) => {
                 st = st.replace( v.match, v.replace ) ;
             } ) ;
+            filter.filter3().forEach( ( v, i ) => {
+                st = st.replace( v.match, v.replace ) ;
+            } ) ;
 
             if( ! isTest ) {
                 fs.rename( path_2_download_done + file, path_3_renamed + st + ".mp4", () => {

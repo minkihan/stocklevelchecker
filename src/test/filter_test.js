@@ -5,7 +5,7 @@
 const filter = require( "../filter/filter.js" ) ;
 
 // test file name
-let file = "bstc-046 _ Jav.mp4" ;
+let file = "idbd00982A.mp4" ;
 
 
 
@@ -21,6 +21,9 @@ filter.filter().forEach( ( v, i ) => {
     st = st.replace( v, "" ) ;
 } ) ;
 filter.filter2().forEach( ( v, i ) => {
+    st = st.replace( v.match, v.replace ) ;
+} ) ;
+filter.filter3().forEach( ( v, i ) => {
     st = st.replace( v.match, v.replace ) ;
 } ) ;
 console.log( st + ext ) ;
