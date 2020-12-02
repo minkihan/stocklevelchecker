@@ -1,7 +1,7 @@
 exports.filter = () => {
     return [
         ".",
-        "-1080P", "-2160P", "-720P", "_2K", "-2K",
+        "-1080P", "-2160P", "-720P", "_2K", "-2K", "_4K",
         "-FHD", "FHD", "HD-", "HD_", "-HD", "_HD", "_FULL", "(1080P)",
         "蜂鸟@FN151.COM-", "@蜂鳥@FENGNIAO131.VIP-", "@蜂鳥@FENGNIAO131VIP-",
         "HJD2048.COM_", "HJD2048COM-",
@@ -13,7 +13,8 @@ exports.filter = () => {
         "-NYAP2P.COM", "~NYAP2P.COM", "~NYAP2PCOM", "-NYAP2PCOM",
         ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET",
         "-IDOLRED", "-IDOL", " _ JAV",
-        "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT", "@18P2P"
+        "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT", "@18P2P",
+        "CD1", "CD2", "CD3", "CD4"
     ] ;
 }
 

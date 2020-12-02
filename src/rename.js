@@ -45,6 +45,16 @@ fs.readdir( path_2_download_done, function ( err, files ) {
             filter.filter3().forEach( ( v, i ) => {
                 st = st.replace( v.match, v.replace ) ;
             } ) ;
+            const h = /00([0-9]+[0-9]+)/ ;
+            if( h.test( st ) ) {
+                st = st.replace( "00", "-" ) ;
+            }
+            const h2 = /([a-zA-Z]*)-([0-9]*)/ ;
+            const h3 = /([a-zA-Z]*)([0-9]*)/ ;
+            if( ! h2.test( st ) ) {
+                const h3r = h3.exec( st ) ;
+                st = h3r[1] + "-" + h3r[2] ;
+            }
 
             if( ! isTest ) {
                 fs.rename( path_2_download_done + file, path_3_renamed + st + ".mp4", () => {
