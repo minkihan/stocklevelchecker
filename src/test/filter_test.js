@@ -48,8 +48,10 @@ const file = [
     , "OFJE-276CD1-A.mp4"
     , "mkck00269a..mp4"
     , "hdka00217.mp4"
+    , "Unhinged.2020.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT.mkv"
     , "esk-316ch.mp4"
     , "idbd00982A.mp4"
+    , "akdl00066..mp4"
  ] ;
 file.forEach( ( v, i ) => {
     filter_test( v ) ;
