@@ -6,9 +6,10 @@ const jav_detail= require( "./parse_jav_detail.js" ) ;
 
 const a = [] ;
 module.exports.getList = async( page ) => {
-    console.log( "page", page ) ;
+    //console.log( "page", page ) ;
     const url = `https://www.javbus.com/ko/page/${page}` ;
     //const url = `https://www.javbus.com/ko/uncensored/page/${page}`
+    //const url = `https://www.javbus.com/ko/star/85j` //yua sakuya
     const getHtml = async() => {
         return await axios.request( {
             method           : "GET",

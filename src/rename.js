@@ -34,8 +34,8 @@ fs.readdir( path_2_download_done, function ( err, files ) {
             
             const pt = file.split( ext ) ;
             let st = pt[0].toUpperCase() ;
-            
             // 파일명 정리
+            st = st.replace( "_", "-" ) ;
             filter.filter().forEach( ( v, i ) => {
                 st = st.replace( v, "" ) ;
             } ) ;

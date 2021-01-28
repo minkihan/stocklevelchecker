@@ -12,6 +12,7 @@ const filter_test = ( file ) => {
     }
     const pt = file.split( ext ) ;
     let st = pt[0].toUpperCase() ;
+    st = st.replace( "_", "-" ) ;
     filter.filter().forEach( ( v, i ) => {
         st = st.replace( v, "" ) ;
     } ) ;
@@ -48,10 +49,12 @@ const file = [
     , "OFJE-276CD1-A.mp4"
     , "mkck00269a..mp4"
     , "hdka00217.mp4"
-    , "Unhinged.2020.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT.mkv"
     , "esk-316ch.mp4"
     , "idbd00982A.mp4"
     , "akdl00066..mp4"
+    , "csdx-003-4k-h264.mp4"
+    , "FHD_6M-clo-102.mp4"
+    , "450OSST-005.mp4"
  ] ;
 file.forEach( ( v, i ) => {
     filter_test( v ) ;
