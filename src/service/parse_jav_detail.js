@@ -137,10 +137,10 @@ module.exports.getDetail = async( j ) => {
             // magnet 링크 출력 및 transmission으로 전송
             try {
                 const xxlink = j.magnet[picked_index].link.replace( trc_target, trc ) ;
-                //console.log( xxlink ) ;
-                exec( xxlink );
+                console.log( xxlink ) ;
+                //exec( xxlink );
             } catch( e ) {
-                console.log( "ERROR ON", j.href ) ;
+                //console.log( "ERROR ON", j.href ) ;
             }
         } catch( e ) {
             //console.log( e ) ;
