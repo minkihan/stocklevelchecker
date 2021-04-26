@@ -28,6 +28,9 @@ fs.readdir( path_2_download_done, function ( err, files ) {
             let ext = "" ;
             if( file.split( ".mp4" ).length > 1 ) {
                 ext = ".mp4" ;
+            } else if( file.split( ".MP4" ).length > 1 ) {
+                file = file.replace( "MP4", "mp4" ) ;
+                ext = ".mp4" ;    
             } else if( file.split( ".mkv" ).length > 1 ) {
                 ext = ".mkv" ;
             }

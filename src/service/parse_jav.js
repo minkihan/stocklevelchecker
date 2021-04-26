@@ -8,8 +8,12 @@ const a = [] ;
 module.exports.getList = async( page ) => {
     //console.log( "page", page ) ;
     const url = `https://www.javbus.com/ko/page/${page}` ;
-    //const url = `https://www.javbus.com/ko/uncensored/page/${page}`
-    //const url = `https://www.javbus.com/ko/star/85j` //yua sakuya
+    //const url = `https://www.javbus.com/ko/uncensored/page/${page}` ;
+    //const url = `https://www.javbus.com/ko/star/85j${page}` ; //yua sakuya
+    //const url = `https://www.javbus.com/ko/star/uly/${page}` ; //Suzumori remu
+    //const url = `https://www.javbus.com/ko/label/6j0/${page}` ;
+    //const url = `https://www.javbus.com/ko/label/6n4/${page}` ;
+    
     const getHtml = async() => {
         return await axios.request( {
             method           : "GET",

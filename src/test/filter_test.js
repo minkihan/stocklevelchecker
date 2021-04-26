@@ -7,6 +7,9 @@ const filter_test = ( file ) => {
     let ext = "" ;
     if( file.split( ".mp4" ).length > 1 ) {
         ext = ".mp4" ;
+    } else if( file.split( ".MP4" ).length > 1 ) {
+        file = file.replace( "MP4", "mp4" ) ;
+        ext = ".mp4" ;
     } else if( file.split( ".mkv" ).length > 1 ) {
         ext = ".mkv" ;
     }
@@ -55,6 +58,19 @@ const file = [
     , "csdx-003-4k-h264.mp4"
     , "FHD_6M-clo-102.mp4"
     , "450OSST-005.mp4"
+    , "(kawaii)(KAVR-003)リアル空間で脱がしていく脱衣麻雀3DVR 鈴木心春_1.mp4"
+    , "(kawaii)(KAVR-003)リアル空間で脱がしていく脱衣麻雀3DVR 鈴木心春_2.mp4"
+    , "chd1080.com@kavr00025.part2.mp4"
+    , "CJOB-081 誘惑ささやきBEST 耳から痴女られ何度も射精させられる.mp4"
+    , "STARS-329 ロケ帰り相部屋NTR 大雪で東京に帰れなくなったお天気お姉さんが、仕事の愚痴を聞いてくれる新人ADと妊娠するまで中出ししまくった一晩。 唯井まひろ.mp4"
+    , "[HD] SDTH-002 野外で精子ALLごっくん20発！マジメなフリした.mp4"
+    , "SDNM-268 「お金よりも大切な何かを見つけに来ました…」冨田朝香 38歳 第2章 「10代の頃のようにトキメキました」’カメラ貸し’年下クンとGo To1日プライベートデート.mp4"
+    , "[HD] SDAB-166 ね～っとり舐められ接吻 栗山さや.mp4"
+    , "[HD] SDMM-076 [BIT].mp4"
+    , "BBTU-009.1080p.mp4"
+    , "big2048.com@TKBN-023.MP4"
+    , "big2048.com@DKSB-109.MP4"
+    , "big2048.com@NACX-074.MP4"
  ] ;
 file.forEach( ( v, i ) => {
     filter_test( v ) ;

@@ -1,8 +1,8 @@
 exports.filter = () => {
     return [
         ".",
-        "-1080P", "-2160P", "-720P", "-2K", "-4K",
-        "-FHD", "FHD-", "FHD", "HD-", "-HD", "-FULL", "(1080P)",
+        "-1080P", "1080P", "-2160P", "-720P", "-2K", "-4K",
+        "-FHD", "FHD-", "FHD", "HD-", "-HD", "[HD]", "-FULL", "(1080P)",
         "-H264", "6M-",
         "蜂鸟@FN131.COM-", "@蜂鳥@FENGNIAO131.VIP-", "@蜂鳥@FENGNIAO131VIP-",
         "蜂鸟@FN151.COM-", "@蜂鳥@FENGNIAO151.VIP-", "@蜂鳥@FENGNIAO151VIP-",
@@ -10,13 +10,18 @@ exports.filter = () => {
         "ONE2048.COM-", "ONE2048COM-",
         "BIG2048.COM@", "BIG2048COM@",
         "FUN2048.COM@", 
+        "CHD1080COM@",
+        "HHD800COM", "HHD800.COM@",
+        "-WWW.YOUIVPAGE.COM",
         "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
         "2048论坛@FUN2048COM -@", "2048论坛@FUN2048COM -",
         "-NYAP2P.COM", "~NYAP2P.COM", "~NYAP2PCOM", "-NYAP2PCOM",
-        ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET",
+        ".HD1080P-WWW.52IV.NET", ".WWW.52IV.NET", ".HHD-WWW.52IV.NET",
         "-IDOLRED", "-IDOL", " - JAV",
-        "DLJAV.NET-", "[FBFB.ME]", "[鱼香肉丝]", "TOKYO-HOT", "@18P2P",
-        "CD1", "CD2", "CD3", "CD4"
+        "DLJAV.NET-", "[鱼香肉丝]", "TOKYO-HOT", "@18P2P",
+        "FBFBME-", "FBFB.ME@", "[FBFB.ME]",
+        "CD1", "CD2", "CD3", "CD4",
+        "(KAWAII)"
     ] ;
 }
 
@@ -75,9 +80,13 @@ exports.filter2 = () => {
         { "match" : /477GRMO/, "replace" : "GRMO" },
         { "match" : /107HYPN/, "replace" : "HYPN" },
         { "match" : /13DSVR/, "replace" : "DSVR" },
-        { "match" : "000", "replace" : "-0" },
+        { "match" : /269OYAJ/, "replace" : "OYAJ" },
+        { "match" : /270JGAHO/, "replace" : "JGAHO" },
         //{ "match" : /([A-Z]*)(00)([0-9]*)/, "replace" : "(0)-(2)" },
-        { "match" : /\s*/g, "replace" : "" } 
+        //{ "match" : /[\(\)]/g, "replace" : "" },
+        { "match" : /[^A-Z0-9\-]/g, "replace" : "" },
+        //{ "match" : "000", "replace" : "-0" },
+        { "match" : /\s*/g, "replace" : "" }
     ] ;
 }
 
