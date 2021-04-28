@@ -5,7 +5,8 @@ const cheerio = require( "cheerio" ) ;
 const fs = require( "fs" ) ;
 const exec = require( "child_process" ).exec ;
 
-const trc = "transmission-remote -n aya5:xkdlrj!2 -a magnet:" ;
+//const trc = "transmission-remote -n aya5:xkdlrj!2 -a magnet:" ;
+const trc = "magnet:" ;
 const trc_target = "magnet:" ;
 
 module.exports.getDetail = async( j ) => {
