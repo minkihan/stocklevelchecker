@@ -1,21 +1,5 @@
 stocklevelchecker
 ===
 
-### 개발 목표
-##### nodejs 스터디 느낌으로 되도록 최신 기술을 도입하기   
-1. patagonia kr 상품 페이지를 특정 간격으로 크롤링 해서 날짜별 목록 생성
-   > 파타고니아 뿐 아니라 알림 체크가 필요한 사이트들도 추가하자 
-2. 수집항목 : 상품코드, 가격, 사이즈별 재고
-3. 수집한 항목은 mongodb로 관리
-4. 웹 인터페이스 제공
-5. 코드 ?
-    ```
-    const x = async() => {
-        console.log( "extream !!" ) ;
-    }
-    ```
-6. 현재 페이지 링크 <https://github.com/minkihan>
-7. 강조 및 줄바꾸기 (문장 마지막에 스페이스 3칸)
-    > *기울이기*   
-    > **두껍게**   
-    > ~~취소선~~
+### flow
+<https://docs.google.com/spreadsheets/d/1LglOqtN_9M54lc_bpqNe7fVlSJ1wE2wnw4sh2G-ebng/edit?usp=sharing>
