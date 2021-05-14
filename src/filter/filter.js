@@ -13,6 +13,7 @@ exports.filter = () => {
         "CHD1080COM@",
         "HHD800COM", "HHD800.COM@",
         "-WWW.YOUIVPAGE.COM",
+        "BBS2048ORG@",
         "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
         "2048论坛@FUN2048COM -@", "2048论坛@FUN2048COM -",
         "-NYAP2P.COM", "~NYAP2P.COM", "~NYAP2PCOM", "-NYAP2PCOM",
@@ -21,7 +22,8 @@ exports.filter = () => {
         "DLJAV.NET-", "[鱼香肉丝]", "TOKYO-HOT", "@18P2P",
         "FBFBME-", "FBFB.ME@", "[FBFB.ME]",
         "CD1", "CD2", "CD3", "CD4",
-        "(KAWAII)"
+        "(KAWAII)",
+        
     ] ;
 }
 
@@ -82,6 +84,7 @@ exports.filter2 = () => {
         { "match" : /13DSVR/, "replace" : "DSVR" },
         { "match" : /269OYAJ/, "replace" : "OYAJ" },
         { "match" : /270JGAHO/, "replace" : "JGAHO" },
+        { "match" : /022BHUST/, "replace" : "BHUST" },
         //{ "match" : /([A-Z]*)(00)([0-9]*)/, "replace" : "(0)-(2)" },
         //{ "match" : /[\(\)]/g, "replace" : "" },
         { "match" : /[^A-Z0-9\-]/g, "replace" : "" },

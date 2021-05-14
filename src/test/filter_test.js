@@ -71,6 +71,7 @@ const file = [
     , "big2048.com@TKBN-023.MP4"
     , "big2048.com@DKSB-109.MP4"
     , "big2048.com@NACX-074.MP4"
+    , "bbs2048.org@CLOT-018.mp4"
  ] ;
 file.forEach( ( v, i ) => {
     filter_test( v ) ;
