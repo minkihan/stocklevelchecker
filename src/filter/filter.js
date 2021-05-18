@@ -14,6 +14,7 @@ exports.filter = () => {
         "HHD800COM", "HHD800.COM@",
         "-WWW.YOUIVPAGE.COM",
         "BBS2048ORG@",
+        "KPXVSCOM-",
         "2048论坛@FUN2048.COM - @", "2048论坛@FUN2048.COM -",
         "2048论坛@FUN2048COM -@", "2048论坛@FUN2048COM -",
         "-NYAP2P.COM", "~NYAP2P.COM", "~NYAP2PCOM", "-NYAP2PCOM",
