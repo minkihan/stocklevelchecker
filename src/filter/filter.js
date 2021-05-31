@@ -32,7 +32,7 @@ exports.filter2 = () => {
     return [
         { "match" : /(-|_)A$/, "replace" : "-1" },
         { "match" : /(-|_)B$/, "replace" : "-2" },
-        { "match" : /(-|_)C$/, "replace" : "-3" },
+        { "match" : /(-|_)C$/, "replace" : "" },
         { "match" : /(-|_)D$/, "replace" : "-4" },
         { "match" : /(-|_)E$/, "replace" : "-5" },
         { "match" : /(-|_)F$/, "replace" : "-6" },

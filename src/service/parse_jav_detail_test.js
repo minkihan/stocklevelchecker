@@ -5,8 +5,8 @@ const cheerio = require( "cheerio" ) ;
 const fs = require( "fs" ) ;
 const exec = require( "child_process" ).exec ;
 
-//const trc = "transmission-remote -n aya5:xkdlrj!2 -a magnet:" ;
-const trc = "magnet:" ;
+const trc = "transmission-remote -n aya5:xkdlrj!2 -a magnet:" ;
+//const trc = "magnet:" ;
 const trc_target = "magnet:" ;
 
 module.exports.getDetail = async( j ) => {
@@ -20,7 +20,7 @@ module.exports.getDetail = async( j ) => {
         //     "--no-zygote"
         // ]
         //const browser = await puppeteer.launch( { args : chromeFlags } ) ;
-        //console.log( j.href ) ;
+        //console.log( j ) ;
         let content = null ;
         try {
             // puppeteer
@@ -54,11 +54,14 @@ module.exports.getDetail = async( j ) => {
             j.img = $( ".bigImage" ).prop( "href" ) ;
             j.maker = $( $( ".col-md-3.info > p > a" )[1] ).text() ;
 
+            //console.log( j ) ;
+
             // magnet 영역
             const tr_list = $( "#magnet-table tr" ) ;
             tr_list.each( function( i, v ) {
                 const td_list = $( v ).find( "td" ) ;
                 let magnet = {} ;
+                
                 td_list.each( function( ii, vv ) {
                     // 가끔 내용 없이 광고가 있는 행이 있음 걸러버려~
                     if( $( vv ).find( "a" ).text().trim() != "" ) {
@@ -70,10 +73,11 @@ module.exports.getDetail = async( j ) => {
                     }
                 } ) ;
                 if( Object.keys( magnet ).length > 0 ) {
+                    magnet.link = magnet.link.replace( trc_target, trc )
                     j.magnet.push( magnet ) ;
                 }
             } ) ;
-            //console.log( j.magnet ) ;
+            console.log( j ) ;
             // magnet 영역 end
 
             // 용량 비교
@@ -139,11 +143,12 @@ module.exports.getDetail = async( j ) => {
             // magnet 링크 출력 및 transmission으로 전송
             try {
                 const xxlink = j.magnet[picked_index].link.replace( trc_target, trc ) ;
-                console.log( xxlink ) ;
                 //exec( xxlink );
             } catch( e ) {
                 //console.log( "ERROR ON", j.href ) ;
             }
+
+            console.log( ta ) ;
         } catch( e ) {
             //console.log( e ) ;
         }
