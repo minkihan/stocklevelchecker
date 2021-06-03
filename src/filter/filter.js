@@ -1,4 +1,4 @@
-exports.filter = () => {
+const filter = () => {
     return [
         ".",
         "-1080P", "1080P", "-2160P", "-720P", "-2K", "-4K",
@@ -28,7 +28,7 @@ exports.filter = () => {
     ] ;
 }
 
-exports.filter2 = () => {
+const filter2 = () => {
     return [
         { "match" : /(-|_)A$/, "replace" : "-1" },
         { "match" : /(-|_)B$/, "replace" : "-2" },
@@ -94,8 +94,10 @@ exports.filter2 = () => {
     ] ;
 }
 
-exports.filter3 = () => {
+const filter3 = () => {
     return [
         { "match" : /[A-Z]+$/, "replace" : "" }
     ] ;
 }
+
+export { filter, filter2, filter3 }

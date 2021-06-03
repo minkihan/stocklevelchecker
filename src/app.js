@@ -19,7 +19,7 @@ import * as Detail from "./service/ParseDetail.js" ;
                 Detail.getDetail( j, $$ ) ;
             } 
         } catch( e ) {
-            console.log( e ) ;
+            console.error( e ) ;
         }
     }
 } ) () ;

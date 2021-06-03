@@ -1,6 +1,7 @@
-const path = require( "path" ) ;
-const fs = require( "fs" ) ;
-const filter = require( "./filter/filter.js" ) ;
+import fs from "fs" ;
+import * as filter from "./filter/filter.js" ;
+
+//const filter = require( "./filter/filter.js" ) ;
 
 const path_2_download_done = "/tr/2_download_done/" ;
 const path_3_renamed = "/tr/3_renamed/" ;

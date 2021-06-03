@@ -1,5 +1,8 @@
-const path = require( "path" ) ;
-const fs = require( "fs" ) ;
+import fs from "fs" ;
+
+//const path = require( "path" ) ;
+//const fs = require( "fs" ) ;
+
 const path_foldered = "/tr/7_foldered/" ;
 const path_download = "/tr/2_download_done/" ;
 

@@ -1,8 +1,8 @@
 /**
  * filter.js 수동으로 테스트하기 
  */
-
-const filter = require( "../filter/filter.js" ) ;
+import * as filter from "../filter/filter.js" ;
+//const filter = require( "../filter/filter.js" ) ;
 const filter_test = ( file ) => {
     let ext = "" ;
     if( file.split( ".mp4" ).length > 1 ) {

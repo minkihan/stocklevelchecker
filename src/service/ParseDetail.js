@@ -86,7 +86,7 @@ const getDetail = ( j, $ ) => {
         // 우선 순위 magnet 링크 출력
         console.log( j.magnet[picked_index].link ) ;
     } catch( e ) {
-        console.log( e, j ) ;
+        console.error( e, j ) ;
     }
 } ;
 
