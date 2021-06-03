@@ -1,8 +1,25 @@
-//const init = require( "./common/init.js" ) ;
-const jav = require( "./model/jav.js" ) ;
-const parse_jav = require( "./service/parse_jav.js" ) ;
+import * as GetHtmlAxios from "./service/GetHtmlAxios.js" ;
+import * as GetHtmlPuppeteer from "./service/GetHtmlPuppeteer.js" ;
+import * as Detail from "./service/ParseDetail.js" ;
 
 ( async() => {
-    await parse_jav.getList( process.argv[2] ) ;
-    //process.exit() ;
+    const maxPage = 5 ;
+    for( let page = 1 ; page <= maxPage ; page++ ) {
+        try {
+            const url = `https://www.javbus.com/ko/page/${page}` ;
+            const $ = await GetHtmlAxios.getHtml( url ) ;
+            const list = $( "#waterfall > .item > .movie-box" ) ;
+            for( const v of list ) {
+                const j = {
+                    href   : v.attribs.href,
+                    title  : $( v ).find( "img" )[0].attribs.title,
+                    magnet : []
+                } ;
+                const $$ = await GetHtmlPuppeteer.getHtml( j.href ) ;
+                Detail.getDetail( j, $$ ) ;
+            } 
+        } catch( e ) {
+            console.log( e ) ;
+        }
+    }
 } ) () ;

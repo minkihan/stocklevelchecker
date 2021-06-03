@@ -1,12 +1,9 @@
-const axios = require( "axios" ) ;
-const cheerio = require( "cheerio" ) ;
-const iconv = require( "iconv-lite" ) ;
-const jav = require( "../model/jav.js" ) ;
-const jav_detail= require( "./parse_jav_detail.js" ) ;
+import axios from "axios" ;
+import cheerio from "cheerio" ;
+import jav_detail from "./parse_jav_detail_20210603.js" ;
 
 const a = [] ;
-module.exports.getList = async( page ) => {
-    //console.log( "page", page ) ;
+const getList = async( page ) => {
     const url = `https://www.javbus.com/ko/page/${page}` ;
     //const url = `https://www.javbus.com/ko/uncensored/page/${page}` ;
     //const url = `https://www.javbus.com/ko/star/85j${page}` ; //yua sakuya
@@ -45,3 +42,5 @@ module.exports.getList = async( page ) => {
         console.error( e ) ; 
     } ) ;
 }
+
+export { getList }

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type" : "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,12 +13,6 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.9",
-    "googleapis": "^73.0.0",
-    "iconv": "^3.0.0",
-    "iconv-lite": "^0.6.2",
-    "mongoose": "^5.12.8",
-    "phantom": "^6.3.0",
-    "phantomjs": "^2.1.7",
-    "puppeteer": "^9.1.1"
+    "puppeteer": "^10.0.0"
   }
 }
