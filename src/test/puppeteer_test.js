@@ -3,15 +3,16 @@
  * internal-chromium 사용하여 웹 페이지 로딩함 느림
  */
 
-const puppeteer = require( "puppeteer" ) ;
-const cheerio = require( "cheerio" ) ;
+import puppeteer from "puppeteer" ;
+import * as cheerio from "cheerio" ;
 
 const getPage = async () => {
     const browser = await puppeteer.launch() ;
     const page = await browser.newPage() ;
-    await page.goto( "https://www.javbus.com/ko/TSF-006" ) ;
+    await page.goto( "https://www.javbus.com/ko/GVH-242" ) ;
     const pageModel = await page.$( "html" ) ;
     const content = await pageModel.evaluate( body => body.innerHTML ) ;
+    //console.log( content ) ;
     const $ = await cheerio.load( content ) ;
     browser.close() ;
     return $ ;
@@ -26,6 +27,7 @@ getPage().then( $ => {
         let magnet = {} ;
         let c = 1 ;
         td_list.each( function( ii, vv ) { 
+            console.log( $( vv ).find( "a" )[0] ) ;
             //console.log( ii, vv ) ;
             if( $( vv ).find( "a" ).text().trim() != "" ) {
                 if( ii == 0 ) magnet.name = $( vv ).find( "a" ).text().trim() ;
@@ -34,7 +36,8 @@ getPage().then( $ => {
                 if( ii == 2 ) magnet.date = $( vv ).find( "a" ).text().trim() ;
             }
         } ) ;
-        console.log( magnet ) ;
+        
+        
     } ) ;
     
 } ) ;

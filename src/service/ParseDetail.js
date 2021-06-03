@@ -8,18 +8,14 @@ const getDetail = ( j, $ ) => {
         const tr_list = $( "#magnet-table tr" ) ;
         tr_list.each( function( i, v ) {
             const td_list = $( v ).find( "td" ) ;
-            let magnet = { 
-                name : null
-                , link : null
-                , size : null
-                , date : null } ;
+            let magnet = {} ;
             td_list.each( function( ii, vv ) {
                 // 가끔 내용 없이 광고가 있는 행이 있음 걸러버려~
                 if( $( vv ).find( "a" ).text().trim() != "" ) {
-                    if( ii == 0 ) magnet.name = $( vv ).find( "a" ).text().trim() &&= "" ;
-                    if( ii == 0 ) magnet.link = $( vv ).find( "a" )[0].attribs.href &&= "" ;
-                    if( ii == 1 ) magnet.size = $( vv ).find( "a" ).text().trim() &&= "" ;
-                    if( ii == 2 ) magnet.date = $( vv ).find( "a" ).text().trim() &&= "" ;
+                    if( ii == 0 ) magnet.name = $( vv ).find( "a" ).text().trim() ;
+                    if( ii == 0 ) magnet.link = $( vv ).find( "a" )[0]?.attribs?.href ;
+                    if( ii == 1 ) magnet.size = $( vv ).find( "a" ).text().trim() ;
+                    if( ii == 2 ) magnet.date = $( vv ).find( "a" ).text().trim() ;
                 }
             } ) ;
             if( Object.keys( magnet ).length > 0 ) {
@@ -88,7 +84,8 @@ const getDetail = ( j, $ ) => {
         } ) ;
 
         // 우선 순위 magnet 링크 출력
-        console.log( j.magnet[picked_index].link ) ;
+        const link = j.magnet[picked_index]?.link ;
+        link ? console.log( link ) : console.error( j.href ) ;
     } catch( e ) {
         console.error( e, j ) ;
     }
