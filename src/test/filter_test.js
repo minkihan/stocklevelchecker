@@ -5,6 +5,7 @@ const filter_test = ( file ) => {
     if( file.split( ".mp4" ).length > 1 ) {
         ext = ".mp4" ;
     } else if( file.split( ".MP4" ).length > 1 ) {
+        // eslint-disable-next-line no-param-reassign
         file = file.replace( "MP4", "mp4" ) ;
         ext = ".mp4" ;
     } else if( file.split( ".mkv" ).length > 1 ) {
@@ -32,7 +33,7 @@ const filter_test = ( file ) => {
     const h3 = /([a-zA-Z]*)([0-9]*)/ ;
     if( ! h2.test( st ) ) {
         const h3r = h3.exec( st ) ;
-        st = h3r[1] + "-" + h3r[2] ;
+        st = `${h3r[1]}-${h3r[2]}` ;
     }
     console.log( st + ext ) ;
 }

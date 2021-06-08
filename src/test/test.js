@@ -38,10 +38,14 @@ console.log( ">>>>>>> ", x.replace( xp, "-1" ) ) ;
 
 
 const filter = [
-    "-1080P", "-2160P",
-    "蜂鸟@FN151.COM-"
+    "-1080P"
+    , "-2160P"
+    , "蜂鸟@FN151.COM-"
 ] ;
 
-filter.forEach( ( v, i ) => {
+for( const v of filter ) {
     console.log( x.replace( v, "" ) ) ;
-} ) ;
+}
+
+const isTest = process.argv.slice( 2 )[0] === "test" ;
+console.log( isTest ) ;

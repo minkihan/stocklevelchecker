@@ -1,11 +1,9 @@
-//const init = require( "./common/init.js" ) ;
-const jav = require( "./model/jav.js" ) ;
-const parse_jav_detail = require( "./service/parse_jav_detail_test.js" ) ;
+import * as GetHtmlPuppeteer from "./service/GetHtmlPuppeteer.js" ;
+import * as Detail from "./service/ParseDetail.js" ;
 
-( async() => {
-    const j = { 
-        href : "https://www.javbus.com/" + process.argv[2]
-        , magnet : [] } ;
-    await parse_jav_detail.getDetail( j ) ;
-    //process.exit() ;
-} ) () ;
+( async () => {
+    const j = { "href" : `https://www.javbus.com/${process.argv[2]}`
+        , "magnet" : [] } ;
+    const $$ = await GetHtmlPuppeteer.getHtml( j.href ) ;
+    Detail.getDetail( j, $$ ) ;
+} )() ; 

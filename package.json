@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +14,8 @@
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.9",
     "puppeteer": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0"
   }
 }
