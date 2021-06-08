@@ -24,79 +24,78 @@ const filter = () => {
         "FBFBME-", "FBFB.ME@", "[FBFB.ME]",
         "CD1", "CD2", "CD3", "CD4",
         "(KAWAII)",
-        
     ] ;
 }
 
 const filter2 = () => {
     return [
-        { "match" : /(-|_)A$/, "replace" : "-1" },
-        { "match" : /(-|_)B$/, "replace" : "-2" },
-        { "match" : /(-|_)C$/, "replace" : "" },
-        { "match" : /(-|_)D$/, "replace" : "-4" },
-        { "match" : /(-|_)E$/, "replace" : "-5" },
-        { "match" : /(-|_)F$/, "replace" : "-6" },
-        { "match" : /(-|_)G$/, "replace" : "-7" },
-        { "match" : /(-|_)H$/, "replace" : "-8" },
-        { "match" : /PART1$/, "replace" : "-1" },
-        { "match" : /PART2$/, "replace" : "-2" },
-        { "match" : /PART3$/, "replace" : "-3" },
-        { "match" : /PART4$/, "replace" : "-4" },
-        { "match" : /PART5$/, "replace" : "-5" },
-        { "match" : /PART6$/, "replace" : "-6" },
-        { "match" : /360AEG/, "replace" : "AEG" },
-        { "match" : /360MBM/, "replace" : "MBM" },
-        { "match" : /21MIHA/, "replace" : "MIHA" },
-        { "match" : /217MIHA/, "replace" : "MIHA" },
-        { "match" : /107EMOI/, "replace" : "EMOI" },
-        { "match" : /107OKYH/, "replace" : "OKYH" },
-        { "match" : /107STKO/, "replace" : "STKO" },
-        { "match" : /1SVDVD/, "replace" : "SVDVD" },
-        { "match" : /217MIHA/, "replace" : "MIHA" },
-        { "match" : /1SVRE/, "replace" : "SVRE" },
-        { "match" : /1STARS/, "replace" : "STARS" },
-        { "match" : /1KIRE/, "replace" : "KIRE" },
-        { "match" : /1SDJS/, "replace" : "SDJS" },
-        { "match" : /1SDDE/, "replace" : "SDDE" },
-        { "match" : /1SDTF/, "replace" : "SDTF" },
-        { "match" : /1SDAB/, "replace" : "SDAB" },
-        { "match" : /393OTIM/, "replace" : "OTIM" },
-        { "match" : /320MMGH/, "replace" : "MMGH" },
-        { "match" : /336KBI/, "replace" : "KBI" },
-        { "match" : /H-086JRZD/, "replace" : "JRZD" },
-        { "match" : /H-1154IMPNO/, "replace" : "IMPNO" },
-        { "match" : /424PSST/, "replace" : "PSST" },
-        { "match" : /390JAC/, "replace" : "JAC" },
-        { "match" : /107SHYN/, "replace" : "SHYN" },
-        { "match" : /406FTBL/, "replace" : "FTBL" },
-        { "match" : /406FTHT/, "replace" : "FTHT" },
-        { "match" : /425IKST/, "replace" : "IKST" },
-        { "match" : /118SOUD/, "replace" : "SOUD" },
-        { "match" : /110AKD/, "replace" : "AKD" },
-        { "match" : /118SIM/, "replace" : "SIM" },
-        { "match" : /118KFNE/, "replace" : "KFNE" },
-        { "match" : /336DTT/, "replace" : "DTT" },
-        { "match" : /116SHH/, "replace" : "SHH" },
-        { "match" : /450OSST/, "replace" : "OSST" },
-        { "match" : /315ETQR/, "replace" : "ETQR" },
-        { "match" : /107SDFK/, "replace" : "SDFK" },
-        { "match" : /477GRMO/, "replace" : "GRMO" },
-        { "match" : /107HYPN/, "replace" : "HYPN" },
-        { "match" : /13DSVR/, "replace" : "DSVR" },
-        { "match" : /269OYAJ/, "replace" : "OYAJ" },
-        { "match" : /270JGAHO/, "replace" : "JGAHO" },
-        { "match" : /022BHUST/, "replace" : "BHUST" },
-        //{ "match" : /([A-Z]*)(00)([0-9]*)/, "replace" : "(0)-(2)" },
-        //{ "match" : /[\(\)]/g, "replace" : "" },
-        { "match" : /[^A-Z0-9\-]/g, "replace" : "" },
-        //{ "match" : "000", "replace" : "-0" },
-        { "match" : /\s*/g, "replace" : "" }
+        [ /(-|_)A$/, "-1"]
+        , [ /(-|_)B$/, "-2"]
+        , [ /(-|_)C$/, ""]
+        , [ /(-|_)D$/, "-4"]
+        , [ /(-|_)E$/, "-5"]
+        , [ /(-|_)F$/, "-6"]
+        , [ /(-|_)G$/, "-7"]
+        , [ /(-|_)H$/, "-8"]
+        , [ /PART1$/, "-1"]
+        , [ /PART2$/, "-2"]
+        , [ /PART3$/, "-3"]
+        , [ /PART4$/, "-4"]
+        , [ /PART5$/, "-5"]
+        , [ /PART6$/, "-6"]
+        , [ /360AEG/, "AEG"]
+        , [ /360MBM/, "MBM"]
+        , [ /21MIHA/, "MIHA"]
+        , [ /217MIHA/, "MIHA"]
+        , [ /107EMOI/, "EMOI"]
+        , [ /107OKYH/, "OKYH"]
+        , [ /107STKO/, "STKO"]
+        , [ /1SVDVD/, "SVDVD"]
+        , [ /217MIHA/, "MIHA"]
+        , [ /1SVRE/, "SVRE"]
+        , [ /1STARS/, "STARS"]
+        , [ /1KIRE/, "KIRE"]
+        , [ /1SDJS/, "SDJS"]
+        , [ /1SDDE/, "SDDE"]
+        , [ /1SDTF/, "SDTF"]
+        , [ /1SDAB/, "SDAB"]
+        , [ /393OTIM/, "OTIM"]
+        , [ /320MMGH/, "MMGH"]
+        , [ /336KBI/, "KBI"]
+        , [ /H-086JRZD/, "JRZD"]
+        , [ /H-1154IMPNO/, "IMPNO"]
+        , [ /424PSST/, "PSST"]
+        , [ /390JAC/, "JAC"]
+        , [ /107SHYN/, "SHYN"]
+        , [ /406FTBL/, "FTBL"]
+        , [ /406FTHT/, "FTHT"]
+        , [ /425IKST/, "IKST"]
+        , [ /118SOUD/, "SOUD"]
+        , [ /110AKD/, "AKD"]
+        , [ /118SIM/, "SIM"]
+        , [ /118KFNE/, "KFNE"]
+        , [ /336DTT/, "DTT"]
+        , [ /116SHH/, "SHH"]
+        , [ /450OSST/, "OSST"]
+        , [ /315ETQR/, "ETQR"]
+        , [ /107SDFK/, "SDFK"]
+        , [ /477GRMO/, "GRMO"]
+        , [ /107HYPN/, "HYPN"]
+        , [ /13DSVR/, "DSVR"]
+        , [ /269OYAJ/, "OYAJ"]
+        , [ /270JGAHO/, "JGAHO"]
+        , [ /022BHUST/, "BHUST"]
+        //, [ /([A-Z]*)(00)([0-9]*)/, "(0)-(2)"]
+        //, [ /[\(\)]/g, ""]
+        , [ /[^A-Z0-9\-]/g, ""]
+        //, ["000", "-0"]
+        , [ /\s*/g, "" ]
     ] ;
 }
 
 const filter3 = () => {
     return [
-        { "match" : /[A-Z]+$/, "replace" : "" }
+        [ /[A-Z]+$/, "" ]
     ] ;
 }
 

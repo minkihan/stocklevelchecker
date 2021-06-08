@@ -1,8 +1,5 @@
-/**
- * filter.js 수동으로 테스트하기 
- */
 import * as filter from "../filter/filter.js" ;
-//const filter = require( "../filter/filter.js" ) ;
+
 const filter_test = ( file ) => {
     let ext = "" ;
     if( file.split( ".mp4" ).length > 1 ) {
@@ -16,15 +13,17 @@ const filter_test = ( file ) => {
     const pt = file.split( ext ) ;
     let st = pt[0].toUpperCase() ;
     st = st.replace( "_", "-" ) ;
-    filter.filter().forEach( ( v, i ) => {
+
+    for( const v of filter.filter() ) { 
         st = st.replace( v, "" ) ;
-    } ) ;
-    filter.filter2().forEach( ( v, i ) => {
-        st = st.replace( v.match, v.replace ) ;
-    } ) ;
-    filter.filter3().forEach( ( v, i ) => {
-        st = st.replace( v.match, v.replace ) ;
-    } ) ;
+    }
+    for( const v of filter.filter2() ) { 
+        st = st.replace( v[0], v[1] ) ;
+    }
+    for( const v of filter.filter3() ) { 
+        st = st.replace( v[0], v[1] ) ;
+    }
+
     const h = /00([0-9]+[0-9]+)/ ;
     if( h.test( st ) ) {
         st = st.replace( "00", "-" ) ;
@@ -45,7 +44,7 @@ const file = [
     , "ppbd00197A.mp4"
     , "big2048.com@MRSC-006.mp4"
     , "CBIKMV-100_4K-B.mp4"
-    , "EBVR-018-B.mp4"
+    , "360AEG-018-B.mp4"
     , "dinm00587A..mp4"
     , "bbtu00001..mp4"
     , "bda00129..mp4"
@@ -74,7 +73,8 @@ const file = [
     , "bbs2048.org@CLOT-018.mp4"
     , "kpxvs.com-huntb00009.mp4"
     , "kpxvs.com-hunbl00046.mp4"
- ] ;
-file.forEach( ( v, i ) => {
+] ;
+
+for( const v of file ) {
     filter_test( v ) ;
-} ) ;
+}
