@@ -12,10 +12,10 @@ t.forEach( ( v, i ) => {
 } ) ;
 
 console.log( ta.sort( ( a, b ) => {
-    if( a.size > b.size ) {
-        return - 1 ;
+    if ( a.size > b.size ) {
+        return -1 ;
     }
-    if( a.size < b.size ) {
+    if ( a.size < b.size ) {
         return 1 ;
     }
     return 0 ;
@@ -23,7 +23,8 @@ console.log( ta.sort( ( a, b ) => {
 
 const trc = "transmission-remote -n aya5:ekfqlc99 -a magnet:" ;
 const trc_target = "magnet:" ;
-const trc_original = "magnet:?xt=urn:btih:30A79F57D0E8BDB1BBFEFA648A571064D5EDC183&dn=SGA-142.mp4" ;
+const trc_original =
+    "magnet:?xt=urn:btih:30A79F57D0E8BDB1BBFEFA648A571064D5EDC183&dn=SGA-142.mp4" ;
 
 console.log( trc_original.replace( trc_target, trc ) ) ;
 
@@ -36,14 +37,9 @@ x = "ABBA-471-A" ;
 xp = /(-|_)A$/ ;
 console.log( ">>>>>>> ", x.replace( xp, "-1" ) ) ;
 
+const filter = [ "-1080P", "-2160P", "蜂鸟@FN151.COM-" ] ;
 
-const filter = [
-    "-1080P"
-    , "-2160P"
-    , "蜂鸟@FN151.COM-"
-] ;
-
-for( const v of filter ) {
+for ( const v of filter ) {
     console.log( x.replace( v, "" ) ) ;
 }
 

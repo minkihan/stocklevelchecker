@@ -1,4 +1,4 @@
-import * as filter from "../filter/filter.js" ;
+import * as Filter from "../service/Filter.js" ;
 
 const filter_test = ( file ) => {
     let ext = "" ;
@@ -15,13 +15,13 @@ const filter_test = ( file ) => {
     let st = pt[0].toUpperCase() ;
     st = st.replace( "_", "-" ) ;
 
-    for( const v of filter.filter() ) { 
+    for( const v of Filter.filter() ) { 
         st = st.replace( v, "" ) ;
     }
-    for( const v of filter.filter2() ) { 
+    for( const v of Filter.filter2() ) { 
         st = st.replace( v[0], v[1] ) ;
     }
-    for( const v of filter.filter3() ) { 
+    for( const v of Filter.filter3() ) { 
         st = st.replace( v[0], v[1] ) ;
     }
 

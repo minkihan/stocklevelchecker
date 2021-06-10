@@ -1,5 +1,5 @@
 import fs from "fs" ;
-import * as filter from "./filter/filter.js" ;
+import * as Filter from "./service/Filter.js" ;
 
 const path_2_download_done = "/tr/2_download_done/" ;
 const path_3_renamed = "/tr/3_renamed/" ;
@@ -41,13 +41,13 @@ fs.readdir( path_2_download_done, ( err, files ) => {
             let st = pt[0].toUpperCase() ;
             // 파일명 정리
             st = st.replace( "_", "-" ) ;
-            for( const v of filter.filter() ) { 
+            for( const v of Filter.filter() ) { 
                 st = st.replace( v, "" ) ;
             }
-            for( const v of filter.filter2() ) { 
+            for( const v of Filter.filter2() ) { 
                 st = st.replace( v[0], v[1] ) ;
             }
-            for( const v of filter.filter3() ) { 
+            for( const v of Filter.filter3() ) { 
                 st = st.replace( v[0], v[1] ) ;
             }
             const h = /00([0-9]+[0-9]+)/ ;

@@ -1,6 +1,6 @@
 import * as GetHtmlAxios from "./service/GetHtmlAxios.js" ;
 import * as GetHtmlPuppeteer from "./service/GetHtmlPuppeteer.js" ;
-import * as Detail from "./service/ParseDetail.js" ;
+import * as ParseDetail from "./service/ParseDetail.js" ;
 
 ( async () => {
     const maxPage = 5 ;
@@ -16,7 +16,7 @@ import * as Detail from "./service/ParseDetail.js" ;
                     , "magnet": []
                 } ;
                 const $$ = await GetHtmlPuppeteer.getHtml( j.href ) ;
-                Detail.getDetail( j, $$ ) ;
+                ParseDetail.getDetail( j, $$ ) ;
             }
         } catch ( e ) { 
             console.error( e ) ;
