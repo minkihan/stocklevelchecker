@@ -60,6 +60,7 @@ const filter = () => [
     , "CD3"
     , "CD4"
     , "(KAWAII)"
+    , "KPAPKCOM-"
 ] 
 
 const filter2 = () => [
