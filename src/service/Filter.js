@@ -61,6 +61,7 @@ const filter = () => [
     , "CD4"
     , "(KAWAII)"
     , "KPAPKCOM-"
+    , "BAIXNXYZ-"
 ] 
 
 const filter2 = () => [
