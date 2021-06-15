@@ -47,7 +47,7 @@
         "complexity": "error",
         "computed-property-spacing": [
             "error",
-            "never"
+            "always"
         ],
         "consistent-return": "off",
         "consistent-this": "error",

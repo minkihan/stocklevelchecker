@@ -3,7 +3,7 @@ import fs from "fs" ;
 const pathFoldered = "/tr/7_foldered/" ;
 const pathDownload = "/tr/2_download_done/" ;
 
-const isTest = process.argv.slice( 2 )[0] === "test" ;
+const isTest = process.argv.slice( 2 )[ 0 ] === "test" ;
 let counter = 0 ;
 fs.readdir( pathFoldered, ( err, files ) => {
     //handling error
@@ -51,17 +51,17 @@ fs.readdir( pathFoldered, ( err, files ) => {
                 return 0 ;
             }
 
-            const pickSize = ta[0].size ;
+            const pickSize = ta[ 0 ].size ;
             ta.forEach( ( v, i ) => {
-                if( pickSize * 0.8 <= ta[i].size ) {
+                if( pickSize * 0.8 <= ta[ i ].size ) {
                     if( ! isTest ) {
                         // Real
-                        fs.rename( ta[i].path, pathDownload + ta[i].name, () => {
-                            console.log( ta[i].name, ta[i].size ) ;
+                        fs.rename( ta[ i ].path, pathDownload + ta[ i ].name, () => {
+                            console.log( ta[ i ].name, ta[ i ].size ) ;
                         } ) ;
                     } else {
                         // For test
-                        const name = new String( ta[i].name ) ;
+                        const name = new String( ta[ i ].name ) ;
                         let passflag = true ;
                         const pass = [
                             "720p"
@@ -77,7 +77,7 @@ fs.readdir( pathFoldered, ( err, files ) => {
                             }
                         }
                         if( passflag ) {
-                            console.log( ta[i].name, ta[i].size, ta[i].path, pathDownload + ta[i].name ) ;
+                            console.log( ta[ i ].name, ta[ i ].size, ta[ i ].path, pathDownload + ta[ i ].name ) ;
                         }
                     }
                 }

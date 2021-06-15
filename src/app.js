@@ -12,7 +12,7 @@ import * as ParseDetail from "./service/ParseDetail.js" ;
             for ( const v of list ) {
                 const j = {
                     "href": v.attribs.href
-                    , "title": $( v ).find( "img" )[0].attribs.title
+                    , "title": $( v ).find( "img" )[ 0 ].attribs.title
                     , "magnet": []
                 } ;
                 const $$ = await GetHtmlPuppeteer.getHtml( j.href ) ;

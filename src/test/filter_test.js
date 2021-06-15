@@ -12,17 +12,17 @@ const filter_test = ( file ) => {
         ext = ".mkv" ;
     }
     const pt = file.split( ext ) ;
-    let st = pt[0].toUpperCase() ;
+    let st = pt[ 0 ].toUpperCase() ;
     st = st.replace( "_", "-" ) ;
 
     for( const v of Filter.filter() ) { 
         st = st.replace( v, "" ) ;
     }
     for( const v of Filter.filter2() ) { 
-        st = st.replace( v[0], v[1] ) ;
+        st = st.replace( v[ 0 ], v[ 1 ] ) ;
     }
     for( const v of Filter.filter3() ) { 
-        st = st.replace( v[0], v[1] ) ;
+        st = st.replace( v[ 0 ], v[ 1 ] ) ;
     }
 
     const h = /00([0-9]+[0-9]+)/ ;
@@ -33,7 +33,7 @@ const filter_test = ( file ) => {
     const h3 = /([a-zA-Z]*)([0-9]*)/ ;
     if( ! h2.test( st ) ) {
         const h3r = h3.exec( st ) ;
-        st = `${ h3r[1] }-${ h3r[2] }` ;
+        st = `${ h3r[ 1 ] }-${ h3r[ 2 ] }` ;
     }
     console.log( st + ext ) ;
 }

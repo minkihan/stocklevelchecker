@@ -3,7 +3,7 @@ import * as Filter from "./service/Filter.js" ;
 
 const path_2_download_done = "/tr/2_download_done/" ;
 const path_3_renamed = "/tr/3_renamed/" ;
-const isTest = process.argv.slice( 2 )[0] === "test" ;
+const isTest = process.argv.slice( 2 )[ 0 ] === "test" ;
 
 //joining path of directory 
 //const directoryPath = path.join( __dirname, path_2_download_done ) ;
@@ -38,17 +38,17 @@ fs.readdir( path_2_download_done, ( err, files ) => {
             }
             
             const pt = file.split( ext ) ;
-            let st = pt[0].toUpperCase() ;
+            let st = pt[ 0 ].toUpperCase() ;
             // 파일명 정리
             st = st.replace( "_", "-" ) ;
             for( const v of Filter.filter() ) { 
                 st = st.replace( v, "" ) ;
             }
             for( const v of Filter.filter2() ) { 
-                st = st.replace( v[0], v[1] ) ;
+                st = st.replace( v[ 0 ], v[ 1 ] ) ;
             }
             for( const v of Filter.filter3() ) { 
-                st = st.replace( v[0], v[1] ) ;
+                st = st.replace( v[ 0 ], v[ 1 ] ) ;
             }
             const h = /00([0-9]+[0-9]+)/ ;
             if( h.test( st ) ) st = st.replace( "00", "-" ) ;
@@ -56,7 +56,7 @@ fs.readdir( path_2_download_done, ( err, files ) => {
             const h3 = /([a-zA-Z]*)([0-9]*)/ ;
             if( ! h2.test( st ) ) {
                 const h3r = h3.exec( st ) ;
-                st = `${ h3r[1] }-${ h3r[2] }` ;
+                st = `${ h3r[ 1 ] }-${ h3r[ 2 ] }` ;
             }
 
             if( ! isTest ) {

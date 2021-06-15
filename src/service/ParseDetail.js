@@ -2,7 +2,7 @@ const getDetail = ( j, $ ) => {
     try {
         // detail 와꾸 읽기
         j.img = $( ".bigImage" ).prop( "href" ) ;
-        j.maker = $( $( ".col-md-3.info > p > a" )[1] ).text() ;
+        j.maker = $( $( ".col-md-3.info > p > a" )[ 1 ] ).text() ;
 
         // magnet 영역
         const tr_list = $( "#magnet-table tr" ) ;
@@ -12,7 +12,7 @@ const getDetail = ( j, $ ) => {
             td_list.map( ( i, td ) => {
                 // 가끔 내용 없이 광고가 있는 행이 있음 걸러버려~
                 if( $( td ).find( "a" ).text().trim() != "" ) {
-                    magnet.link = $( td ).find( "a" )[0]?.attribs?.href ;
+                    magnet.link = $( td ).find( "a" )[ 0 ]?.attribs?.href ;
                     if( i == 0 ) magnet.name = $( td ).find( "a" ).text().trim() ;
                     if( i == 1 ) magnet.size = $( td ).find( "a" ).text().trim() ;
                     if( i == 2 ) magnet.date = $( td ).find( "a" ).text().trim() ;
@@ -68,7 +68,7 @@ const getDetail = ( j, $ ) => {
             //console.log( v.size, picked_size * 0.8, v.name.toUpperCase() != v.name, v.name.toUpperCase(), v.name ) ;
             if( v.size >= picked_size * 0.8 ) {
                 if( v.name.toUpperCase() != v.name ) {
-                    if( v.name.toUpperCase() == j.magnet[picked_index].name ) {
+                    if( v.name.toUpperCase() == j.magnet[ picked_index ].name ) {
                         picked_index = v.index ;
                         picked_size = v.size ;
                     }
@@ -77,7 +77,7 @@ const getDetail = ( j, $ ) => {
         }
 
         // 우선 순위 magnet 링크 출력
-        const link = j.magnet[picked_index]?.link ;
+        const link = j.magnet[ picked_index ]?.link ;
         link ? console.log( link ) : console.error( j.href ) ;
     } catch( e ) {
         console.error( e, j ) ;

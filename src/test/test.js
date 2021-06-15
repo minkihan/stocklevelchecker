@@ -42,5 +42,5 @@ for ( const v of filter ) {
     console.log( x.replace( v, "" ) ) ;
 }
 
-const isTest = process.argv.slice( 2 )[0] === "test" ;
+const isTest = process.argv.slice( 2 )[ 0 ] === "test" ;
 console.log( isTest ) ;
