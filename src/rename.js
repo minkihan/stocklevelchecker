@@ -56,11 +56,11 @@ fs.readdir( path_2_download_done, ( err, files ) => {
             const h3 = /([a-zA-Z]*)([0-9]*)/ ;
             if( ! h2.test( st ) ) {
                 const h3r = h3.exec( st ) ;
-                st = `${h3r[1]}-${h3r[2]}` ;
+                st = `${ h3r[1] }-${ h3r[2] }` ;
             }
 
             if( ! isTest ) {
-                fs.rename( path_2_download_done + file, `${path_3_renamed + st}.mp4`, () => {
+                fs.rename( path_2_download_done + file, `${ path_3_renamed + st }.mp4`, () => {
                     //console.log( path_2_download_done + file, " >>> ", path_2_download_done + st + ".mp4" ) ;
                     console.log( file, " >>> ", st + ext ) ;
                 } ) ;

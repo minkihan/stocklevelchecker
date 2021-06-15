@@ -33,7 +33,7 @@ const filter_test = ( file ) => {
     const h3 = /([a-zA-Z]*)([0-9]*)/ ;
     if( ! h2.test( st ) ) {
         const h3r = h3.exec( st ) ;
-        st = `${h3r[1]}-${h3r[2]}` ;
+        st = `${ h3r[1] }-${ h3r[2] }` ;
     }
     console.log( st + ext ) ;
 }

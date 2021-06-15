@@ -23,8 +23,7 @@ console.log( ta.sort( ( a, b ) => {
 
 const trc = "transmission-remote -n aya5:ekfqlc99 -a magnet:" ;
 const trc_target = "magnet:" ;
-const trc_original =
-    "magnet:?xt=urn:btih:30A79F57D0E8BDB1BBFEFA648A571064D5EDC183&dn=SGA-142.mp4" ;
+const trc_original = "magnet:?xt=urn:btih:30A79F57D0E8BDB1BBFEFA648A571064D5EDC183&dn=SGA-142.mp4" ;
 
 console.log( trc_original.replace( trc_target, trc ) ) ;
 

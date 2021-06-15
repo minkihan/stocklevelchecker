@@ -25,7 +25,7 @@ fs.readdir( pathFoldered, ( err, files ) => {
             }
             const ta = [] ;
             files2.forEach( ( file2 ) => {
-                const file2Path = `${pathFoldered + file}/${file2}` ;
+                const file2Path = `${ pathFoldered + file }/${ file2 }` ;
                 const stat = fs.statSync( file2Path ) ;
                 const size = stat.size / 1024 / 1024 ;
                 // 300 메가 미만 걸러 ~~

@@ -6,7 +6,7 @@ import * as ParseDetail from "./service/ParseDetail.js" ;
     const maxPage = 5 ;
     for ( let page = 1 ; page <= maxPage ; page++ ) {
         try {
-            const url = `https://www.javbus.com/page/${page}` ;
+            const url = `https://www.javbus.com/page/${ page }` ;
             const $ = await GetHtmlAxios.getHtml( url ) ;
             const list = $( "#waterfall > .item > .movie-box" ) ;
             for ( const v of list ) {
