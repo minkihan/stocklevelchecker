@@ -62,6 +62,15 @@ const filter = () => [
     , "(KAWAII)"
     , "KPAPKCOM-"
     , "BAIXNXYZ-"
+    , "BAIAPKXYZ-"
+    , "BBYXVXYZ-"
+    , "H-706"
+    , "H-094"
+    , "H-1248"
+    , "H-1256"
+    , "TAXVXYZ-"
+    , "JPAVBTCOM-"
+    , "AAXVXYZ-"
 ] 
 
 const filter2 = () => [
@@ -122,6 +131,8 @@ const filter2 = () => [
     , [ /270JGAHO/, "JGAHO" ]
     , [ /022BHUST/, "BHUST" ]
     , [ /484SDGN/, "SDGN" ]
+    , [ /145IQPA/, "IQPA" ]
+    , [ /268SPYE/, "SPYE" ]
     //, [ /([A-Z]*)(00)([0-9]*)/, "(0)-(2)"]
     //, [ /[\(\)]/g, ""]
     , [ /[^A-Z0-9-]/g, "" ]
