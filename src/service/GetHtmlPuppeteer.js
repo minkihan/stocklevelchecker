@@ -5,7 +5,11 @@ import * as cheerio from "cheerio" ;
 const getHtml = async ( href ) => {
     try {
         process.setMaxListeners( 30 ) ;
-        const browser = await puppeteer.launch() ;
+        //const browser = await puppeteer.launch() ;
+        const browser = await puppeteer.launch( {
+            "executablePath": "/usr/bin/chromium-browser"
+            , "headless": false
+        } ) ;
         const page = await browser.newPage() ;
         page.setDefaultNavigationTimeout( 0 ) ;
         await page.goto( href ) ;
