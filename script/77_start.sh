@@ -10,7 +10,15 @@ PASS=1
 
 echo "---------------------------------------------------"
 date
-/usr/bin/Xvfb -ac :99 -screen 0 1280x1024x16 &
-export DISPLAY=:99
+
+if pgrep -x Xvfb > /dev/null
+then
+    echo "Xvfb is running ..."
+else 
+    echo "process start : Xvfb"
+    /usr/bin/Xvfb -ac :99 -screen 0 1280x1024x16 2>&1 &
+    export DISPLAY=:99
+fi
+
 node ~/coda/stocklevelchecker/src/app >> ~/coda/stocklevelchecker/log/jav.$CURRENT_DATE.log
 date
