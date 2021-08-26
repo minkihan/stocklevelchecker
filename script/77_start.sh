@@ -11,9 +11,13 @@ PASS=1
 echo "---------------------------------------------------"
 date
 
-#if pgrep -x Xvfb > /dev/null
-#then
-#    echo "Xvfb is running ..."
+if pgrep -x Xvfb > /dev/null
+then
+    echo "Xvfb is running ..."
+    xvfb=$(pgrep Xvfb)
+    kill -9 $xvfb
+    echo "process stop : Xvfb"
+fi
 #else 
     /usr/bin/Xvfb -ac :99 -screen 0 1280x1024x16 2>&1 &
     export DISPLAY=:99
