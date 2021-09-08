@@ -24,7 +24,7 @@ fi
     echo "process start : Xvfb"
 #fi
 
-node ~/coda/stocklevelchecker/src/app >> ~/coda/stocklevelchecker/log/jav.$CURRENT_DATE.log
+node /slc/src/app >> /slc/log/jav.$CURRENT_DATE.log
 
 xvfb=$(pgrep Xvfb)
 kill -9 $xvfb
