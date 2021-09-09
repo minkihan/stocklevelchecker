@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "cheerio": "^1.0.0-rc.10",
     "puppeteer": "^10.1.0",
     "puppeteer-core": "^10.2.0"
