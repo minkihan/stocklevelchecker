@@ -1,6 +1,6 @@
-import * as GetHtmlAxios from "./service/GetHtmlAxios.js" ;
-import * as GetHtmlPuppeteer from "./service/GetHtmlPuppeteer.js" ;
-import * as ParseDetail from "./service/ParseDetail.js" ;
+const GetHtmlAxios = require( "./service/GetHtmlAxios.js" ) ;
+const GetHtmlPuppeteer = require( "./service/GetHtmlPuppeteer.js" ) ;
+const ParseDetail = require( "./service/ParseDetail.js" ) ;
 
 ( async () => {
     const maxPage = 5 ;

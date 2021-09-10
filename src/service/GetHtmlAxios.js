@@ -1,6 +1,5 @@
-/* eslint-disable init-declarations */
-import axios from "axios" ;
-import * as cheerio from "cheerio" ;
+const axios = require( "axios" ) ;
+const cheerio = require( "cheerio" ) ;
 
 // axios 로 페이지 조회 (ajax 없음)
 const getHtml = async ( url ) => {
@@ -17,4 +16,6 @@ const getHtml = async ( url ) => {
     return cheerio.load( html.data ) ;
 } ;
 
-export { getHtml }
+module.exports = {
+    getHtml
+}

@@ -1,4 +1,5 @@
-import * as Filter from "../service/Filter.js" ;
+const Filter = require( "../service/Filter.js" ) ;
+
 
 const filter_test = ( file ) => {
     let ext = "" ;

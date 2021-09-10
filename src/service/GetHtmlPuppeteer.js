@@ -1,5 +1,5 @@
-import puppeteer from "puppeteer" ;
-import * as cheerio from "cheerio" ;
+const puppeteer = require( "puppeteer" ) ;
+const cheerio = require( "cheerio" ) ;
 
 // puppeteer(ajax 포함한 모든 dom 로딩 완료 시점) 로 url 읽어서 html 리턴
 const getHtml = async ( href ) => {
@@ -22,4 +22,6 @@ const getHtml = async ( href ) => {
     }
 } ;
  
-export { getHtml }
+module.exports = {
+    getHtml
+}

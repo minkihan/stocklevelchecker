@@ -158,4 +158,8 @@ const filter3 = () => [
     [ /[A-Z]+$/, "" ]
 ] 
 
-export { filter, filter2, filter3 }
+module.exports = {
+    filter
+    , filter2
+    , filter3
+}

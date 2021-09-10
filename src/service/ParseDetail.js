@@ -84,4 +84,6 @@ const getDetail = ( j, $ ) => {
     }
 } ;
 
-export { getDetail }
+module.exports = {
+    getDetail
+}

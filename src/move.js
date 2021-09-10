@@ -1,4 +1,4 @@
-import fs from "fs" ;
+const fs = require( "fs" ) ;
 
 const pathFoldered = "/tr/7_foldered/" ;
 const pathDownload = "/tr/2_download_done/" ;

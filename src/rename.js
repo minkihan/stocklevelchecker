@@ -1,5 +1,5 @@
-import fs from "fs" ;
-import * as Filter from "./service/Filter.js" ;
+const fs = require( "fs" ) ;
+const Filter = require( "./service/Filter.js" ) ;
 
 const path_2_download_done = "/tr/2_download_done/" ;
 const path_3_renamed = "/tr/3_renamed/" ;

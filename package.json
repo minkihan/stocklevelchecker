@@ -1,22 +1,25 @@
 {
-  "name": "stocklevelchecker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.21.4",
-    "cheerio": "^1.0.0-rc.10",
-    "puppeteer": "^10.2.0",
-    "puppeteer-core": "^10.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0"
+  "name": "stocklevelchecker"
+  , "version": "1.0.0"
+  , "description": ""
+  , "main": "app.js"
+  , "scripts": {
+    "lint": "eslint --fix . --ext .json,.js"
+    , "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  , "keywords": []
+  , "author": ""
+  , "license": "ISC"
+  , "dependencies": {
+    "axios": "^0.21.4"
+    , "cheerio": "^1.0.0-rc.10"
+    , "puppeteer": "^10.2.0"
+    , "puppeteer-core": "^10.2.0"
+  }
+  , "devDependencies": {
+    "@typescript-eslint/parser": "^4.28.5"
+        , "eslint": "^7.31.0"
+        , "eslint-plugin-jsonc": "^1.5.0"
+        , "typescript": "^4.3.5"
   }
 }
