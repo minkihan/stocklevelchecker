@@ -7,7 +7,7 @@ cd /tr/99_log/jav/
 echo "cd ~/jav/"
 
 sftp -i ~/.ssh/id_rsa -P 2275 minkihan@$(cat /code/stocklevelchecker/script/coda-vm-linux) << %EOF%
-cd /home/minkihan/coda/stocklevelchecker/log
+cd /coda/__docs/stocklevelchecker/log
 get jav.$DATETIME.log
 bye
 %EOF%
