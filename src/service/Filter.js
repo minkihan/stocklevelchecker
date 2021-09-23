@@ -78,6 +78,7 @@ const filter = () => [
     , "H-1116"
     , "EAPKXYZ-"
     , "ICAOME"
+    , "JAV20S8COM"
 ] 
 
 const filter2 = () => [
