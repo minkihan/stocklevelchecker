@@ -132,7 +132,7 @@ module.exports = {
         , "no-extra-parens": "error"
         , "no-floating-decimal": "error"
         , "no-implicit-coercion": "error"
-        , "no-implicit-globals": "error"
+        , "no-implicit-globals": "off"
         , "no-implied-eval": "error"
         , "no-inline-comments": "error"
         , "no-invalid-this": "error"
@@ -250,7 +250,7 @@ module.exports = {
         , "space-infix-ops": "error"
         , "spaced-comment": "off"
         , "strict": "off"
-        , "switch-colon-spacing": "error"
+        , "switch-colon-spacing": [ "error", { "after": true, "before": true } ]
         , "symbol-description": "error"
         , "template-curly-spacing": [ "error", "always" ]
         , "template-tag-spacing": "error"
