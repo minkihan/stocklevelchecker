@@ -11,15 +11,15 @@
   , "author": ""
   , "license": "ISC"
   , "dependencies": {
-    "axios": "^0.21.4"
+    "axios": "^0.22.0"
     , "cheerio": "^1.0.0-rc.10"
-    , "puppeteer": "^10.2.0"
-    , "puppeteer-core": "^10.2.0"
+    , "puppeteer": "^10.4.0"
+    , "puppeteer-core": "^10.4.0"
   }
   , "devDependencies": {
-    "@typescript-eslint/parser": "^4.28.5"
-        , "eslint": "^7.31.0"
-        , "eslint-plugin-jsonc": "^1.5.0"
-        , "typescript": "^4.3.5"
+    "@typescript-eslint/parser": "^5.0.0"
+        , "eslint": "^8.0.0"
+        , "eslint-plugin-jsonc": "^1.7.0"
+        , "typescript": "^4.4.3"
   }
 }
