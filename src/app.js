@@ -7,6 +7,10 @@ const ParseDetail = require( "./service/ParseDetail.js" ) ;
     for ( let page = 1 ; page <= maxPage ; page++ ) {
         try {
             const url = `https://www.javbus.com/page/${ page }` ;
+            // 1pondo, carib, heyzo
+            //const url = `https://www.javbus.com/ko/uncensored/studio/3a/${ page }` ;
+            //const url = `https://www.javbus.com/ko/uncensored/studio/3n/${ page }`
+            //const url = `https://www.javbus.com/ko/uncensored/studio/3h/${ page }`
             const $ = await GetHtmlAxios.getHtml( url ) ;
             const list = $( "#waterfall > .item > .movie-box" ) ;
             for ( const v of list ) {
