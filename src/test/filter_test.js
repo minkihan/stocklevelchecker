@@ -1,17 +1,25 @@
 const Filter = require( "../service/Filter.js" ) ;
 
+function getExtensionOfFilename(filename) {
+    var _fileLen = filename.length;
+    var _lastDot = filename.lastIndexOf('.');
+    var _fileExt = filename.substring(_lastDot, _fileLen).toLowerCase();
+    return _fileExt;
+}
 
 const filter_test = ( file ) => {
-    let ext = "" ;
-    if( file.split( ".mp4" ).length > 1 ) {
-        ext = ".mp4" ;
-    } else if( file.split( ".MP4" ).length > 1 ) {
-        // eslint-disable-next-line no-param-reassign
-        file = file.replace( "MP4", "mp4" ) ;
-        ext = ".mp4" ;
-    } else if( file.split( ".mkv" ).length > 1 ) {
-        ext = ".mkv" ;
-    }
+    let ext = getExtensionOfFilename( file ) ;
+
+    // if( file.split( ".mp4" ).length > 1 ) {
+    //     ext = ".mp4" ;
+    // } else if( file.split( ".MP4" ).length > 1 ) {
+    //     // eslint-disable-next-line no-param-reassign
+    //     file = file.replace( "MP4", "mp4" ) ;
+    //     ext = ".mp4" ;
+    // } else if( file.split( ".mkv" ).length > 1 ) {
+    //     ext = ".mkv" ;
+    // }
+    ext = getExtensionOfFilename( file ) ;
     const pt = file.split( ext ) ;
     let st = pt[ 0 ].toUpperCase() ;
     st = st.replace( "_", "-" ) ;
@@ -80,6 +88,9 @@ const file = [
     , "bbs2048.org@h_094ktra00304ehhb.mp4"
     , "bbyxv.xyz-MADV509.mp4"
     , "aaxv.xyz_svs00073.mp4"
+    , "STARS-229 户田真琴 uncensored leaked.rar"
+    , "390JNT-007.mp4"
+    , "396BIG-112.mp4"
 ] ;
 
 for( const v of file ) {

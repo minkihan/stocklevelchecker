@@ -5,6 +5,13 @@ const path_2_download_done = "/tr/2_download_done/" ;
 const path_3_renamed = "/tr/3_renamed/" ;
 const isTest = process.argv.slice( 2 )[ 0 ] === "test" ;
 
+function getExtensionOfFilename(filename) {
+    var _fileLen = filename.length;
+    var _lastDot = filename.lastIndexOf('.');
+    var _fileExt = filename.substring(_lastDot, _fileLen).toLowerCase();
+    return _fileExt;
+}
+
 //joining path of directory 
 //const directoryPath = path.join( __dirname, path_2_download_done ) ;
 //passsing directoryPath and callback function
@@ -26,16 +33,16 @@ fs.readdir( path_2_download_done, ( err, files ) => {
             //move.start( isTest ) ;
         } else {
             // Do whatever you want to do with the file
-            let ext = "" ;
-            if( file.split( ".mp4" ).length > 1 ) {
-                ext = ".mp4" ;
-            } else if( file.split( ".MP4" ).length > 1 ) {
-                // eslint-disable-next-line no-param-reassign
-                file = file.replace( "MP4", "mp4" ) ;
-                ext = ".mp4" ;    
-            } else if( file.split( ".mkv" ).length > 1 ) {
-                ext = ".mkv" ;
-            }
+            let ext = getExtensionOfFilename( file ) ;
+            // if( file.split( ".mp4" ).length > 1 ) {
+            //     ext = ".mp4" ;
+            // } else if( file.split( ".MP4" ).length > 1 ) {
+            //     // eslint-disable-next-line no-param-reassign
+            //     file = file.replace( "MP4", "mp4" ) ;
+            //     ext = ".mp4" ;    
+            // } else if( file.split( ".mkv" ).length > 1 ) {
+            //     ext = ".mkv" ;
+            // }
             
             const pt = file.split( ext ) ;
             let st = pt[ 0 ].toUpperCase() ;
@@ -60,7 +67,7 @@ fs.readdir( path_2_download_done, ( err, files ) => {
             }
 
             if( ! isTest ) {
-                fs.rename( path_2_download_done + file, `${ path_3_renamed + st }.mp4`, () => {
+                fs.rename( path_2_download_done + file, `${ path_3_renamed + st + ext }`, () => {
                     //console.log( path_2_download_done + file, " >>> ", path_2_download_done + st + ".mp4" ) ;
                     console.log( file, " >>> ", st + ext ) ;
                 } ) ;
