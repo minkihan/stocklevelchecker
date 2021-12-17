@@ -82,6 +82,11 @@ const filter = () => [
     , "H-068"
     , "HDD600COM"
     , "HDD800COM"
+    , "AMAVXYZ-"
+    , "AVMANAPP-"
+    , "AVMANSCOM-"
+    , "PEXVXYZ-"
+    , "YB1565APP-"
 ] 
 
 const filter2 = () => [
@@ -109,6 +114,7 @@ const filter2 = () => [
     , [ /H-086JRZD/, "JRZD" ]
     , [ /H-1154IMPNO/, "IMPNO" ]
     , [ /H-1569NKKVR/, "NKKVR" ]
+    
     , [ /[^A-Z0-9-]/g, "" ]
     , [ /\s*/g, "" ]
 ] 
